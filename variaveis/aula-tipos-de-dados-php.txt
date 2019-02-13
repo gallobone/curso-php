@@ -1,0 +1,21 @@
+
+8 tipos de dados primitivos em php
+divididos em 3 grupos de dados
+
+Grupo 1
+Tipos Básicos:
+inteiro
+string
+ponto fluante
+booleano
+
+Grupo 2
+Tipos Compostos:
+Array
+Objeto
+
+Grupo 3
+Tipos Especiais:
+Resource
+Null
+

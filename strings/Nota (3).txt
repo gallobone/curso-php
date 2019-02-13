@@ -1,0 +1,8 @@
+E aí galera, tudo bem?
+
+Nesta aula, no exemplo-04.php, os professores falam sobre a função strpos(), que encontra a posição de algum caractere em uma string.
+Também existe a função mb_strpos(), que encontra a posição de um caractere baseado na encodação UTF-8
+Segue o link para mais informações:
+https://secure.php.net/manual/pt_BR/function.mb-strpos.php
+
+Abraço e bons estudos :)

@@ -1,0 +1,11 @@
+Variáveis-pré-definidas
+
+Variáveis pré-definidas ou Arrays SuperGlobais
+
+EXAMPLES:
+
+$_GET["nome"];
+
+$_SERVER["REMOTE_ADDR"]; //pega o IP do usuário
+
+$_SERVER["SCRIPT_NAME"]; //Pega o nome do arquivo/página que o usuário acessou
