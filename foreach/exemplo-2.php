@@ -14,6 +14,10 @@
 Lembrando que o $_GET é o padrão do php para ler, por exemplo formularios, no caso de não se usar o atributo METHOD(onde poderiamos definir get ou post) no form.
 
 Portanto, no exemplo abaixo estamos utilizando $_GET
+
+$_GET, Requisição que envia os dados como uma string, através da URL(de forma parametrizada)
+$_POST, Requisição que é encapsulada junto ao corpo da requisição HTTP e não pode ser vista, envia os dados de forma oculta.
+
 -->
 
 <?php
@@ -29,7 +33,6 @@ if(isset($_GET)){
 		echo "<hr>";
 	}
 }
-	
 	
 
 
