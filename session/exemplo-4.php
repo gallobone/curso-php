@@ -4,9 +4,9 @@
 
 
 //Como recuperar uma sessão através do ID?
-session_id('7dnad4dmhdsqtmlbh4s31c7vh6'); 
+session_id('7dnad4dmhdsqtmlbh4s31c7vh6');  
 /*
-Neste exemplo copiei o ID da sessão que estava aberta em uma guia padrão, e vou recuperar essa sessão em uma guia anônima,
+Neste exemplo acima copiei o ID da sessão que estava aberta em uma guia padrão, e vou recuperar essa sessão em uma guia anônima,
 uma vez que ja sei qual é o id da sessão desejada (session_id('7dnad4dmhdsqtmlbh4s31c7vh6');)
 */
 

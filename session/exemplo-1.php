@@ -19,6 +19,8 @@ Neste caso, usamos a function session_start();
 require_once("config.php");
 
 
+
+//Aqui abaixo, temos um exemplo de uma variável de sessão, cujo o nome é "nome", e o valor dela é "Hcode"
 $_SESSION["nome"] = "Hcode";
 
 //AQUI NO ARQUIVO EXEMPLO-1.php estamos criando uma sessão...
