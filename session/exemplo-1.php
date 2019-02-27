@@ -29,12 +29,12 @@ $_SESSION["nome"] = "Hcode";
 dados desta sessao aqui, criada no exemplo-1.php */
 
 /*
-OBS: PARA CRIAR UMA SESSÃO É PRECISO SEMPRE USAR O START_SESSION();
+OBS: PARA CRIAR UMA SESSÃO É PRECISO SEMPRE USAR A FUNCTION START_SESSION();
 PORÉM TAMBÉM É POSSÍVEL CONFIGURAR ISSO NO ARQUIVO PHP.INI, PARA QUE O START DE UMA SESSÃO SEJA INICIADO AUTOMATICAMENTE
 
 
-o ideal é que sempre se use o start_function(), ao invés de mexer no php.ini, porém, recomenda-se criar um arquivo de configuração, 
-tipo um CONFIG.PHP, pra inserir o start_function() nele, assim como criar um arquivo FUNCTIONS.PHP, para inserir as funcoes do sistema, 
+o ideal é que sempre se use o session_start(), ao invés de mexer no php.ini, porém, recomenda-se criar um arquivo de configuração, 
+tipo um CONFIG.PHP, pra inserir o session_start() nele, assim como criar um arquivo FUNCTIONS.PHP, para inserir as funcoes do sistema, 
 ect.
 
 
