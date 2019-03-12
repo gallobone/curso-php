@@ -66,19 +66,29 @@ $json = file_get_contents('https://api.mercadolibre.com/users/226384143/');
 
 $data = json_decode($json, true);
 
+
+
+foreach ($data as $key => $value) {
+	print_r($key . ": ". $value. "<br/>");
+}
+
+
+
 echo "<br/>";
 echo "<br/>";
 
 
+var_dump($data);
+echo "<br/>";
+echo "<br/>";
 
 print_r($data);
 echo "<br/>";
 echo "<br/>";
 
-var_dump($data);
-
-echo "<br/>";
-echo "<br/>";
+// var_dump($data);
+// echo "<br/>";
+// echo "<br/>";
 
 //echo $data[0];
 

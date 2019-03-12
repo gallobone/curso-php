@@ -1,7 +1,6 @@
 <?php
 
 $hierarquia = array(
-
 	array(
 		'nome_cargo'=>'CEO',
 		'subordinados'=>array(
@@ -10,9 +9,12 @@ $hierarquia = array(
 				'nome_cargo'=>'Diretor Comercial',
 				'subordinados'=> array(
 					//Início: Gerente de Vendas
+					array(
 					'nome_cargo'=>'Gerente de Vendas'
+					)
+					//Término: Gerente de Vendas
 				)
-				//Término: Gerente de Vendas
+				
 			),
 			//Término: Diretor Comercial
 
@@ -55,7 +57,33 @@ $hierarquia = array(
 
 
 function exibe($cargos){
-	print_r($hierarquia);
+	
+
+	$html = "<ul>";
+
+	foreach ($cargos as $cargo) {
+		$html .= "<li>";
+		
+		$html .= $cargo['nome_cargo'];
+
+		if(isset($cargo['subordinados']) && count($cargo['subordinados']) > 0){
+			$html .= exibe($cargo['subordinados']);
+
+		}
+
+		$html .= "</li>";
+
+
+	}
+
+
+	// abaixo usamos o ".=" para incrementar/adicionar valor ao valor inicial da variável $html;
+	$html .= "</ul>";
+
+	return $html;
+
 }
+
+echo exibe($hierarquia);
 
 ?>
