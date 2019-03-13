@@ -15,7 +15,7 @@ $fn como se estivesse chamando uma function(); Vejamos o exemplo:
 */
 
 
-//Chamei a variável $fn(que agora é uma function), e passei como parametro uma string
+//Chamei a variável $fn(que agora é uma function), e passei como parametro uma string que será varrida no var_dump()
 $fn("Oi");
 
 ?>
