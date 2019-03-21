@@ -40,6 +40,8 @@ echo "<br/>";
 No exemplo abaixo, o sinal de "?" representa o IF/THEN, 
 e o sinal de ":" representa o ELSE.
 */
+
 echo ($qualASuaIdade < $idadeMaior)?"Você é Menor de Idade":"Você é maior de idade";
+//Acima, como dito, o OPERADOR TERNÁRIO: outra forma de se criar uma estrutura condicional.
 
 ?>
