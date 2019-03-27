@@ -50,7 +50,7 @@ function calcular($funcaoDeRetorno){
  
 calcular(function(){
  
-        // Este é o callnack
+        // Este é o callback
 	echo "A conta foi feita!!!";
  
 });
