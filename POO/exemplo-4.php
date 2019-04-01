@@ -23,6 +23,7 @@ class Endereco {
 	private $cidade;
 
 	//Agora vamos criar um "Método Construtor(Método Mágico)"
+	//Em tese, o método construtor, resume o que fazem os métodos GETERS and SETERS
 
 	public function __construct($a, $b, $c){
 		$this->logradouro = $a;
