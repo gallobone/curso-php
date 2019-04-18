@@ -7,7 +7,7 @@ class Carro{
 /*
 Abaixo vamos criar os atributos como 'private' , que é o padrão mais comum.
 O tipo de encapsulamento Private protege mais os seus atributos. 
-Com o padrão public, você tem mais liberdado para acessa-los, porem menos segurança;
+Com o padrão public, você tem mais liberdade para acessa-los, porem menos segurança;
 
 Para este caso de atributos definidos com o tipo de encapsulamento PRIVATE, existem métodos "geters" e "seters", 
 que podemos usar para pegar ou definir valores para os atributos PRIVATES
