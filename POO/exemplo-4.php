@@ -22,9 +22,9 @@ class Endereco {
 	private $numero;
 	private $cidade;
 
+	
 	//Agora vamos criar um "Método Construtor(Método Mágico)"
 	//Em tese, o método construtor, resume o que fazem os métodos GETERS and SETERS
-
 	public function __construct($a, $b, $c){
 		$this->logradouro = $a;
 		$this->numero = $b;
@@ -67,7 +67,7 @@ var_dump($meuEndereco);
 unset($meuEndereco);
 
 
-//Lembrando que para poder funcionaro o echo $meuEndereco é preciso comentar a linha 66 onde eu destruo o objeto $meuEndereco
+//Lembrando que para poder funcionaro o echo $meuEndereco é preciso comentar a linha 67 onde eu destruo o objeto $meuEndereco
 echo "<br/>";
 echo $meuEndereco;
 
