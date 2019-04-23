@@ -3,8 +3,10 @@
 //AULA SOBRE CLASSE ABSTRATA
 //É semelhante à INTERFACE
 
-//DIFERENÇA ENTRE UMA CLASSE COMUM E UMA CLASSE ABSTRATA, É QUE UM OBJETO NUNCA VAI INSTANCIAR UMA CLASSE ABSTRATA.
-//SÓ SERÁ POSSÍVEL INSTANCIAR UMA CLASSE EXTENDS(QUE SEJA HERANÇA DE UMA CLASSE ABSTRATA). VEJAMOS NOSSO EXEMPLO ABAIXO:
+/*
+DIFERENÇA ENTRE UMA CLASSE COMUM E UMA CLASSE ABSTRATA, É QUE UM OBJETO NUNCA VAI INSTANCIAR UMA CLASSE ABSTRATA.
+PORTANTO, SÓ É POSSÍVEL INSTANCIAR UMA CLASSE QUE SEJA EXTENDS(QUE SEJA HERANÇA DE UMA CLASSE ABSTRATA), E NAO UMA CLASSE ABSTRATA.
+ VEJAMOS NOSSO EXEMPLO ABAIXO:   */
 
 interface Veiculo{
 	//Aqui estamos dizendo que todo veiculo que formos criar no nosso sistema precisa ter um public metodo acelerar();
@@ -46,7 +48,7 @@ class DelRey extends Automovel{
 }
 
 
-//Aqui, por ser uma classe abstrata, só podemos instanciar um objeto da classe DelRey, que é a classe Extrends(herança);
+//Aqui, por ser uma classe abstrata, só podemos instanciar um objeto da classe DelRey, que é a classe Extends(herança);
 $carro = new DelRey();
 
 $carro->acelerar(200);
