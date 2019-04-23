@@ -100,7 +100,7 @@ $obj->exibeViolao();
 $obj2 = new Loja();
 
 echo "<br/>";
-echo "<strong>Preço: </strong>". $obj2->exibePreco();
+echo "<strong>Preço : </strong>". $obj2->exibePreco();
 //echo "<br/>" . $this->modelo;
 
 
