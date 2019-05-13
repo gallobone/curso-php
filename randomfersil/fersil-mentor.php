@@ -66,7 +66,9 @@ $randomizaColors = array_rand($arrayColors);
 		header{background: url('img/toldo2.png') repeat; height: 120px; width: 100%;}
 		.container{width: 1100px; margin: 0 auto;}
 
-		.section-initial{height: 550px;}
+		.section-initial{height: 670px;}
+		.section-draggable{background: url('img/bg-bath.jpg'); height: 675px;width: 100%;background-size: contain;}
+		.section-fersil-room{background: url('img/bg-fersil-rom.jpg'); height: 675px;width: 100%;background-size: cover;}
 
 		.container h1{color: #000;font-family: 'Luckiest Guy', cursive;color: #fbff3e;font-size: 100px;text-shadow: 4px 4px 9px #000;text-align: center;}
 		.container h2{/*color: #ff0000;*/color:#ffffff;font-family: 'Luckiest Guy', cursive;font-size: 40px;text-shadow: 2px 5px 0px #000;}
@@ -74,9 +76,7 @@ $randomizaColors = array_rand($arrayColors);
 		.fersil-msg h2 img{float: left; margin-right: 20px;}
 		button{cursor:url(img/maozinha1.cur), auto; font-family: 'Luckiest Guy', cursive;padding: 10px;border: 11px solid #254c86!important;}
 
-		.section-draggable{background: url('img/bg-bath.jpg'); height: 675px;width: 100%;background-size: contain;}
-
-		.section-fersil-room{background: url('img/bg-fersil-rom.jpg'); height: 675px;width: 100%;background-size: cover;}
+		
 
 		.draggable{cursor: move;}
 	}
@@ -154,6 +154,14 @@ $randomizaColors = array_rand($arrayColors);
 						<span><img src=""></span>
 					</div>
 				</div>
+			</div>
+		</section>
+
+		<section>
+			<div>
+				<?php
+					//require('index-v2.html');
+				?>
 			</div>
 		</section>
 
