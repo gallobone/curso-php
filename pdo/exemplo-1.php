@@ -8,7 +8,10 @@
 //No segundo parametro inserimos o usuario
 //No terceiro parametro inserimos a senha, que aqui no nosso caso tem senha, portanto apenas abrimos e fechamos aspas.
 
-$conn = new PDO("mysql:dbname=dbphp7;host=localhost", "root", "");
+//$conn = new PDO("mysql:dbname=dbphp7;host=localhost", "root", "");
+
+//para rodar em linux, o ambiente pediu a senha, portanto criei uma nova conection que desta vez recebe o parametro de senha, caso nao fosse preciso, o objeto "$conn" teria em PDO o terceiro parametro vazio.
+$conn = new PDO("mysql:dbname=dbphp7;host=localhost", "root", "root2019@Maldini33");
 
 
 $stmt = $conn->prepare("SELECT * FROM tb_usuarios ORDER BY deslogin");
