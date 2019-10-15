@@ -1,5 +1,7 @@
 <?php
 
+
+//Aqui criamos a classe SQL, que herda a classe PDO(nativa do PHP)
 class Sql extends PDO {
 
 	private $conn;
