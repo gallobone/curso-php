@@ -57,7 +57,7 @@ class RecursosHumanos extends Profissionais{
 
 $obj = new Profissionais();
 
-$obj->setNome("Fernando");
+$obj->setNome("Paolo Maldini");
 echo $obj->getNome();
 echo "<br/>";
 
