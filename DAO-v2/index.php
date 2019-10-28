@@ -30,8 +30,18 @@ echo json_encode($usuarios);
 
 
 //Abaixo a forma de carregar um usuário por autenticação, validando por login e senha
-$usuario = new Usuario();
-$usuario->login("Jose","123456");
-echo $usuario;
+//$usuario = new Usuario();
+//$usuario->login("Jose","123456");
+//echo $usuario;
+
+
+//Abaixo, a forma de chamar o INSERT, atraves da procedure que criamos.
+$aluno = new Usuario("aluno","@luno");
+
+$aluno->insert();
+
+echo $aluno;
+
+
 
 ?>

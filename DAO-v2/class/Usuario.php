@@ -106,6 +106,41 @@ class Usuario {
 	}
 
 
+	//INSERT com Data Access Object
+	//Exemplo de método de insert onde chamamos uma procedure
+	public function insert(){
+		
+		$sql = new Sql();
+
+		$results = $sql->select("CALL sp_usuarios_insert(:LOGIN, :PASSWORD)", array(
+			'LOGIN' => $this->getDeslogin(),
+			'PASSWORD' => $this->getDessenha() 
+		));
+		
+		if(count($results) > 0){
+			//chamando o metodo que seta os valores de cada coluna da tabela tb_usuarios
+			$this->setData($results[0]);
+		}
+	}
+
+
+	//Aqui otimizamos, em um método, os geters e seters que atribuem os valores pra cada coluna da tabela tb_usuarios
+	public function setData($data){
+		$this->setIdusuario($row["idusuario"]);
+		$this->setDeslogin($row["deslogin"]);
+		$this->setDessenha($row["dessenha"]);
+		$this->setDtcadastro(new Datetime($row["dtcadastro"]));
+	}
+
+
+	public function __construct($login = "", $password = ""){
+		$this->setDeslogin($login);
+		$this->setDessenha($password);
+	}
+
+
+
+
 	public function __toString(){
 
 		return json_encode(array(
