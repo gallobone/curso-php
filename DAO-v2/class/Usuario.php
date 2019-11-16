@@ -3,6 +3,7 @@
 
 /*Criando a classe Usuario*/
 class Usuario {
+
 	private $idusuario;
 	private $deslogin;
 	private $dessenha;
@@ -142,13 +143,13 @@ class Usuario {
 
 
 	public function __toString(){
-
+		//echo "teste to_string";
 		return json_encode(array(
 			"idusuario"=>$this->getIdusuario(),
-			"dessenha"=>$this->getDessenha(),
 			"deslogin"=>$this->getDeslogin(),
+			"dessenha"=>$this->getDessenha(),
 			"dtcadastro"=>$this->getDtcadastro()->format("d/m/Y H:i:s")
-			));
+		));
 	}
 }
 

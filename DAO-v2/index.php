@@ -35,12 +35,24 @@ echo json_encode($usuarios);
 //echo $usuario;
 
 
-//Abaixo, a forma de chamar o INSERT, atraves da procedure que criamos.
-$aluno = new Usuario("aluno","@luno");
 
+//Abaixo uma primeira forma de chamar o metodo INSERT, atraves da procedure que criamos
+$aluno = new Usuario();
+$aluno->setDeslogin("maldini");
+$aluno->setDessenha("teste123");
 $aluno->insert();
-
 echo $aluno;
+
+
+/*
+Abaixo, outra forma de chamar o INSERT, atraves da procedure que criamos. Desta ves passando os paremtros pro metodo __construct
+que é chamado sempre que instanciamos um objeto. veja abaixo:
+ */
+//$aluno = new Usuario("aluno gallo","senha123");
+
+//$aluno->insert();
+
+//echo $aluno;
 
 
 
