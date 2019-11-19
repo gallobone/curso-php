@@ -127,10 +127,11 @@ class Usuario {
 
 	//Aqui otimizamos, em um método, os geters e seters que atribuem os valores pra cada coluna da tabela tb_usuarios
 	public function setData($data){
-		$this->setIdusuario($row["idusuario"]);
-		$this->setDeslogin($row["deslogin"]);
-		$this->setDessenha($row["dessenha"]);
-		$this->setDtcadastro(new Datetime($row["dtcadastro"]));
+		
+		$this->setIdusuario($data["idusuario"]);
+		$this->setDeslogin($data["deslogin"]);
+		$this->setDessenha($data["dessenha"]);
+		$this->setDtcadastro(new Datetime($data["dtcadastro"]));
 	}
 
 
