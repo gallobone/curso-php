@@ -24,9 +24,13 @@ echo json_encode($usuarios);
 //echo json_encode($lista);
 
 
+
+
 //Abaixo a forma de carregar uma lista de usuários buscando pelo login
 //$search = Usuario::search("jo");
 //echo json_encode($search);
+
+
 
 
 //Abaixo a forma de carregar um usuário por autenticação, validando por login e senha
@@ -36,12 +40,16 @@ echo json_encode($usuarios);
 
 
 
+
 //Abaixo uma primeira forma de chamar o metodo INSERT, atraves da procedure que criamos
-$aluno = new Usuario();
-$aluno->setDeslogin("maldini");
-$aluno->setDessenha("teste123");
-$aluno->insert();
-echo $aluno;
+//$aluno = new Usuario();
+//$aluno->setDeslogin("maldini");
+//$aluno->setDessenha("teste123");
+//$aluno->insert();
+//echo $aluno;
+
+
+
 
 
 /*
@@ -53,6 +61,31 @@ que é chamado sempre que instanciamos um objeto. veja abaixo:
 //$aluno->insert();
 
 //echo $aluno;
+
+
+
+
+//Abaixo uma forma de realizar um UPDATE no conceito de DAO.
+/*
+$aluno = new Usuario();
+$aluno->loadById(6);
+//$aluno->setDeslogin("Franco");
+//$aluno->setDessenha("Maldini33");
+//$aluno->setDtcadastro(new Datetime(""));
+$aluno->update("Toricelli", "senhacamisa3");
+echo $aluno;
+*/
+
+
+
+//Abaixo uma forma de usar o DELETE no conceito de DAO;
+$aluno = new Usuario();
+$aluno->delete(15);
+echo $aluno;
+
+
+
+
 
 
 

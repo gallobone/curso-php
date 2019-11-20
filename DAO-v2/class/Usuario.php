@@ -124,6 +124,43 @@ class Usuario {
 		}
 	}
 
+	public function update($login, $senha){
+
+		$this->setDeslogin($login);
+		$this->setDessenha($senha);
+		$this->setDtcadastro(new Datetime());
+
+		$sql = new Sql();
+
+		$sql->query("UPDATE tb_usuarios SET deslogin = :DESLOGIN, dessenha = :DESSENHA, dtcadastro = :DATCADASTRO WHERE idusuario = :ID", array(
+			"ID"=>$this->getIdusuario(),
+			"DESLOGIN"=>$this->getDeslogin(),
+			"DESSENHA"=>$this->getDessenha(),
+			"DATCADASTRO"=>$this->getDtcadastro()->format('d:m:y')
+			));
+	}
+
+
+	public function delete($id){
+		
+		$this->setIdusuario($id);
+		
+		$sql = new Sql();
+
+		$sql->query("DELETE FROM tb_usuarios WHERE idusuario = :ID", array(
+			"ID"=>$this->getIdusuario()
+		));
+
+		/*
+		APOÓS APAGAR OS DADOS DO BANCO, SETAMOS OS VALORES PRA NULLOS E VAZIOS NOS SETERS, PQ MESMO DELETANDO DO BANCO, OS VALORES ANTERIORES
+		PERMANECEM NA MEMORIA DO OBJETO
+		*/
+		$this->setIdusuario(0);
+		$this->setDeslogin("");
+		$this->setDessenha("");
+		$this->setDtcadastro(new Datetime());
+	}
+
 
 	//Aqui otimizamos, em um método, os geters e seters que atribuem os valores pra cada coluna da tabela tb_usuarios
 	public function setData($data){
