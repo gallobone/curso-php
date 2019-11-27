@@ -92,7 +92,7 @@ class Usuarios {
 	}
 
 
-
+	//DELETE
 	public function delete($id){
 
 		$this->setIdusuario($id);
@@ -103,6 +103,23 @@ class Usuarios {
 				"ID"=>$this->idusuario
 			));
 
+	}
+
+
+	//UPDATE
+	public function update($id){
+
+		$this->setIdusuario($id);
+		$this->setDatacadastro(new Datetime());
+
+		$sql = new Sql();
+
+		$sql->select("UPDATE tb_usuarios SET login = :LOGIN, senha = :SENHA, dtcadastro = :DATA WHERE idusuario = :ID", array(
+				"ID"=>$this->idusuario,
+				"LOGIN"=>$this->login,
+				"SENHA"=>$this->senha,
+				"DATA"=>$this->datacadastro->format('d:m:y')
+			));
 	}
 	
 	

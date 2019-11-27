@@ -62,7 +62,7 @@ $results = $start->select("SELECT * FROM tb_usuarios");
 		        <td> <?php echo $rows['login']; ?></td>
 		        <td> <?php echo $rows['senha']; ?></td>
 		        <td> <?php echo $rows['dtcadastro']; ?></td>
-		        <td><a href='delete.php?id=<?php echo $rows['idusuario']; ?>'>DELETAR</a> | <a href="atualizar.php">ATUALIZAR</a></td>
+		        <td><a href='delete.php?id=<?php echo $rows['idusuario']; ?>'>DELETAR</a> | <a href='update.php?id=<?php echo $rows['idusuario']; ?>'>ATUALIZAR</a></td>
 			  </tr>
 			<?php endforeach;?>
 
