@@ -18,7 +18,8 @@ header("Content-Type: image/jpeg");
 /*
 Porem, da maneira abaixo, usando um segundo parametro na funcao imagejpeg(), 
 vc pode gerar a imagem (com o nome que quiser) dentro do diretorio, ao inves de somente printa-la na tela.*/
-imagejpeg($image, "certificado-".date("Y-m-d").".jpg");
+imagejpeg($image, "certificado-".date("Y-m-d").".jpg", 50);
+//OBS: O terceiro parametro desta funcao acima corresponde à porcentagem de qualidade do arquivo, e portanto, acima, usamos 50 por cento;
 
 //E abaixo, usamos o imagedestroy para liberar a alocação de memoria.
 imagedestroy($image);
