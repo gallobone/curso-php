@@ -1,5 +1,13 @@
 <?php
 
+//Aula sobre função RECURSIVA.
+//Função Recursiva é uma função que chama a sim própria. É preciso ter cuidado para não entrar em um loop infinito
+
+
+/*Lembrando que funções recursivas só devem ser usadas em ultimo caso ou em casos muito específicos
+Se póssível, é sempre melhor optar por while, foreach ou for
+*/
+
 $hierarquia = array(
 	array(
 		'nome_cargo'=>'CEO',
