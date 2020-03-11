@@ -3,7 +3,7 @@
 /**
 * 
 */
-class Times {
+class Times{
 	
 	public $nome;
 	public $nacionalidade;
