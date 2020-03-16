@@ -24,7 +24,7 @@ class Times{
 	}
 
 	public function setNacionalidade($param){
-		$this->nacionalidade = $nacionalidade;
+		$this->nacionalidade = $param;
 	}
 
 

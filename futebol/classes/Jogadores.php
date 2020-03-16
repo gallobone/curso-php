@@ -12,6 +12,7 @@ class Jogadores
 	public $idade;
 	public $posicao;
 	public $nacionalidade;
+	public $time;
 
 
 	//GETERS
@@ -31,22 +32,69 @@ class Jogadores
 		return $this->nacionalidade;
 	}
 
+	public function getTime(){
+		return $this->time;
+	}
+
 
 	//SETERS
 	public function setNome($param){
-		$this->nome = $nome;
+		$this->nome = $param;
 	}
 
 	public function setIdade($param){
-		$this->idade = $idade;
+		$this->idade = $param;
 	}
 
 	public function setPosicao($param){
-		$this->posicao = $posicao;
+		$this->posicao = $param;
 	}
 
 	public function setNacionalidade($param){
-		$this->nacionalidade = $nacionalidade;
+		$this->nacionalidade = $param;
+	}
+
+	public function setTime($param){
+		$this->time = $param;
+
+	}
+
+
+	//Setando os dados
+	public function setData($data){
+		
+		$this->setNome($data["nome_jogador"]);
+		$this->setIdade($data["idade"]);
+		$this->setPosicao($data["posicao_jogador"]);
+		$this->setNacionalidade($data["nacionalidade_jogador"]);
+		$this->setTime($data["time"]);
+	}
+
+
+	public function __toString(){
+
+		return json_encode(array(
+					"nome_jogador"=>$this->getNome(),
+					"idade"=>$this->getIdade(),
+					"posicao_jogador"=>$this->getPosicao(),
+					"nacionalidade_jogador"=>$this->getNacionalidade(),
+					"time"=>$this->getTime()
+			
+		));
+	}
+
+	public function insert(){
+
+		$sql = new Sql();
+
+		$sql->run_query("INSERT INTO tb_jogadores (nome_jogador, idade, posicao_jogador, nacionalidade_jogador, time_id) VALUES (:NOME, :IDADE, :POSICAO, :NACIONALIDADE, :TIME_ID)", array(
+				"NOME"=>$this->nome,
+				"IDADE"=>$this->idade,
+				"POSICAO"=>$this->posicao,
+				"NACIONALIDADE"=>$this->nacionalidade,
+				"TIME_ID"=>$this->time
+				
+			));
 	}
 
 

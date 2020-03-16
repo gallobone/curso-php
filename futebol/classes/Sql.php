@@ -107,7 +107,7 @@ class Sql extends PDO
 	//Aqui vamos criar o metodo que executa as queries
 
 	//SELECT QUERY
-	public function select($rawQuery, $params = array()):array
+	public function run_query($rawQuery, $params = array()):array
 	{
 		$stmt = $this->query($rawQuery, $params);
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);

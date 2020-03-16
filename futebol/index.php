@@ -10,17 +10,17 @@ echo "<br/>";
 
 
 
-$obj = new Times();
+//$obj = new Times();
 
-$obj->setNome("Dragoes de Botafogo");
+//$obj->setNome("Dragoes de Botafogo");
 
-echo $obj->getNome();
+//echo $obj->getNome();
 
-echo "<br/>";
+//echo "<br/>";
 
 
 $sql = new Sql();
-$results = $sql->select('SELECT * FROM tb_times');
+$results = $sql->run_query('SELECT * FROM tb_times');
 
 //echo json_encode($results);
 
