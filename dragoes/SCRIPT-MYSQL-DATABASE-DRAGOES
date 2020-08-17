@@ -1,0 +1,45 @@
+CREATE TABLE tb_usuarios (
+id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+nome VARCHAR(65) NOT NULL,
+email VARCHAR(65) NOT NULL, 
+login VARCHAR(65) NOT NULL, 
+senha CHAR(30) NOT NULL,
+dt_acesso TIMESTAMP,
+fl_ativo SMALLINT,
+
+PRIMARY KEY (id)
+);
+
+
+CREATE TABLE tb_jogadores (
+id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+nome VARCHAR(65) NOT NULL, 
+posicao VARCHAR(65), 
+apelido VARCHAR(65),
+
+PRIMARY KEY (id)
+);
+
+
+CREATE TABLE tb_habilidades (
+id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+nome_habilidade VARCHAR(65) NOT NULL, 
+
+PRIMARY KEY (id)
+);
+
+
+CREATE TABLE tb_habilidade_jogador (
+id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+id_usuario INT UNSIGNED NOT NULL,
+id_jogador INT UNSIGNED NOT NULL,
+id_habilidade INT UNSIGNED NOT NULL,
+pontuacao INT NOT NULL,
+PRIMARY KEY (id),
+
+FOREIGN KEY (id_usuario) REFERENCES tb_usuarios (id),
+FOREIGN KEY (id_jogador) REFERENCES tb_jogadores (id),
+FOREIGN KEY (id_habilidade) REFERENCES tb_habilidades (id)
+);
+
+

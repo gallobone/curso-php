@@ -14,3 +14,8 @@ curso_id INT UNSIGNED NOT NULL,
 PRIMARY KEY (aula_id),
 FOREIGN KEY (curso_id) REFERENCES curso (curso_id)
 );
+
+
+
+TIPOS DE DADOS MYSQL
+https://imasters.com.br/back-end/os-tipos-de-dados-no-mysql-string

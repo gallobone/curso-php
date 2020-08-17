@@ -6,7 +6,7 @@
 class Times{
 	
 	public $nome;
-	public $nacionalidade;
+	public $cidade;
 
 
 
@@ -19,12 +19,12 @@ class Times{
 	}
 
 
-	public function getNacionalidade(){
-		return $this->nacionalidade;
+	public function getCidade(){
+		return $this->cidade;
 	}
 
-	public function setNacionalidade($param){
-		$this->nacionalidade = $param;
+	public function setCidade($param){
+		$this->cidade = $param;
 	}
 
 

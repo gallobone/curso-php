@@ -1,0 +1,12 @@
+/*styles*/
+html{}
+body{background: url('../images/bg-header-2.jpeg') repeat; }
+/*header{
+	background: url('../images/bg-header-2.jpeg') repeat-x; 
+	width: 100%; 
+	min-height: 100px;
+	border-bottom: 3px solid #ffffff;
+}*/
+header h1{text-align: center;}
+.box-form{padding: 20px 20px;border: 1px solid #ccc; border-radius: 8px 8px;background-color: #ffffff;}
+/*.box-form h1{font-family: 'Luckiest Guy', cursive;}*/
