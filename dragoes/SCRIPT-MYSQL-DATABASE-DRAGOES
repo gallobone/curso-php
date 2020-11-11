@@ -43,3 +43,10 @@ FOREIGN KEY (id_habilidade) REFERENCES tb_habilidades (id)
 );
 
 
+
+//*******************************//
+//INSERE USUARIO PARA TESTAR LOGIN:
+
+INSERT INTO tb_usuarios (nome, email, login, senha, fl_ativo ) VALUES ('Raul Sakai', 'raulsakai@email.com', 'raulsakai', 'senha123', 1);
+
+

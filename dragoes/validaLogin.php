@@ -2,8 +2,8 @@
 
 require_once('config.php');
 
-$usuario = $_GET['usuario'];
-$senha = $_GET['senha'];
+$usuario = $_POST['login'];
+$senha = $_POST['senha'];
 
 $obj = new Login();
 
@@ -11,7 +11,21 @@ $obj->setUsuario($usuario);
 $obj->setSenha($senha);
 
 
-$obj->validaLogin($usuario, $senha);
+$islogged = $obj->validaLogin($usuario, $senha);
 
+if($islogged){
 
-?>
+	//session_start();
+	$user = $obj->getUsuario();
+	$iduser = $obj->getIdusuario();
+
+	//$_SESSION["nome"] = $user;
+	//$_SESSION["iduser"] = $iduser;
+
+	header("location: index.php?user=".$user."&iduser=".$iduser);
+}
+else{
+
+	header("location: login.php?login=false");
+}
+

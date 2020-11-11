@@ -1,0 +1,12 @@
+INSERT PARA PREENCHER A TABELA DE HABILIDADES tb_habilidades
+
+
+INSERT INTO 
+	tb_habilidades (nome_habilidade) 
+VALUES 	("Velocidade"),
+	("Habilidade"),
+	("Chute"),
+	("Passe"),
+	("Marcação"),
+	("Liderança");
+

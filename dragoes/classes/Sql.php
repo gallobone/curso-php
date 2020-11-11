@@ -17,7 +17,7 @@ class Sql extends PDO
 			//Criando o objeto de conexao com os banco de dados
 			$this->connectionString = new PDO("mysql:host=localhost;dbname=db_dragoes", "root", "root2019@Maldini33");
 
-			echo "Conexão estabelecida<br/>";
+			//echo "Conexão estabelecida<br/>";
 			
 			if(!$this->connectionString){
 

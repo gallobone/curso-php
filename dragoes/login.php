@@ -1,4 +1,9 @@
-<?php?>
+<?php 
+
+$login = $_GET['login'];
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,28 +18,27 @@
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 
 	<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
 </head>
 
-<body>
+<body class="body-login">
 	<div class="all">
-		<!--<header>
-			<h1>Dragões de Botafogo - 2002</h1>
-		</header>-->
-		
 		<div class="container">
 			<div class="row mt-5">
 				<div class="col-12">
 					<div class="box-form">
 
-						<h1>Login</h1><br/>
+						<h1 class="terror-blue monoton">Login</h1><br/>
 
 						<!--<div class="logo text-center"><img src="images/logo-dbfc.png"></div>-->
 
-						<form action="validaLogin.php" method="GET" name="formlogin">
+						<form id="formlogin" name="formlogin" action="validaLogin.php" method="post">
 
 						  <div class="form-group">
 						    <label for="username">Username</label>
-						    <input type="text" class="form-control" id="username" placeholder="Username" name="usuario">
+						    <input type="text" class="form-control" id="username" placeholder="Username" name="login">
 						  </div>
 						  
 						  <div class="form-group">
@@ -42,10 +46,20 @@
 						    <input type="password" class="form-control" id="password" placeholder="Password" name="senha">
 						  </div>
 
-						  <button type="submit" class="btn btn-primary">Submit</button>
+						  <!--<input type="button" name="" value="Login" id="bt_login" class="btn btn-primary">-->
+						  <input type="submit" name="" value="Login" class="btn btn-primary">
 
 						</form>
 					</div>
+
+					<div class="msg mt-5 nosifer">
+						<?php if($login == 'false') : ?>
+								<?= "<h3 class='red-blood'>LOGIN FAILED</h3><br/>";?>
+						<?php elseif($login == 'no_session') : ?>
+								<?= "<h3 class='strong-yellow'>Faça o Login</h3><br/>" ;?>
+						<?php endif;?>
+					</div>
+
 				</div>
 			</div>
 		</div>

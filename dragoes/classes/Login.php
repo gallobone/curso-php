@@ -15,6 +15,15 @@ class Login
 	private $fl_ativo;
 
 
+
+	public function getIdusuario(){
+		return $this->idusuario;
+	}
+
+	public function setIdusuario($param){
+		$this->idusuario = $param;
+	}
+
 	public function getUsuario(){
 		return $this->usuario;
 	}
@@ -49,11 +58,28 @@ class Login
 			));
 
 
+		
 		if(count($results) > 0){
-			echo "LOGIN VÁLIDO<br/>";
+
+			$row = $results[0];
+			//print_r($row);
+			//echo "LOGIN VÁLIDO<br/>";
+			//echo json_encode($results);
+			
+			$this->setUsuario($row['nome']);
+			$this->setIdusuario($row['id']);
+			
+			//$user = $this->getUsuario();
+			//$iduser = $this->getIdusuario();
+
+			//header("location: index.php?user=".$user);
+			return true;
+			
 		}
 		else{
-			echo "LOGIN INVÁLIDO";
+			//header("location: login.php?login=false");
+			//echo "LOGIN INVÁLIDO";
+			return false;
 		}
 
 	}

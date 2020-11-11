@@ -1,12 +1,119 @@
+/*font libs*/
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+/*font-family: 'Anton', sans-serif;*/
+
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+/*font-family: 'Alfa Slab One', cursive;*/
+
+@import url('https://fonts.googleapis.com/css2?family=Modak&display=swap');
+/*font-family: 'Modak', cursive;*/
+
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+/*font-family: 'Monoton', cursive;*/
+
+@import url('https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap');
+/*font-family: 'Sigmar One', cursive;*/
+
+@import url('https://fonts.googleapis.com/css2?family=Frijole&display=swap');
+/*font-family: 'Frijole', cursive;*/
+
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+/*font-family: 'Creepster', cursive;*/
+
+@import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
+/*font-family: 'Nosifer', cursive;*/
+
+
+/*font class*/
+.anton{font-family: 'Anton', sans-serif;}
+.alfa-slab{font-family: 'Alfa Slab One', cursive;}
+.modak{font-family: 'Modak', cursive;}
+.monoton{font-family: 'Monoton', cursive;}
+.sigmar-one{font-family: 'Sigmar One', cursive;}
+.frijole{font-family: 'Frijole', cursive;}
+.creepster{font-family: 'Creepster', cursive;}
+.nosifer{font-family: 'Nosifer', cursive;}
+
+
+/*colours*/
+.white{color:#ffffff;}
+.green-ocean{color:#56ccb2}
+.dark-green{color: #709459;}
+.first-orange{color: #e0803a;}
+.strong-orange{color: #ff6000}
+.dark-pinky{color: #ff1c4f}
+.deep-purple{color: #5f0bff}
+.green-light{color: #8ed61f}
+.strong-yellow{color: #ffed00}
+.red-blood{color: #ff1313}
+.dark-red{color: #b73540;}
+.ghost-grey{color: #a7a7a7}
+.dark-grey{color: #58575a;}
+.terror-blue{color: #3e93ff}
+.dark-blue{color: #3c587b;}
+.primary-black{color: #191919;}
+
+
+
+/*buttons*/
+.btn-green{background-color:#517548;color: #ffff;}
+.btn-green:hover{background-color:#70a263;}
+
+
 /*styles*/
-html{}
-body{background: url('../images/bg-header-2.jpeg') repeat; }
+html{height: 100%;}
+/*body{background: url('../images/bg-header-2.jpeg') repeat; }*/
 /*header{
 	background: url('../images/bg-header-2.jpeg') repeat-x; 
 	width: 100%; 
 	min-height: 100px;
 	border-bottom: 3px solid #ffffff;
 }*/
+
+html{/*font-size: 62.5%;*/}
+body{/*background:#242424; /*#0c2133*/}
+
+body.body-login{height: 100%;background: #222;}
+body.body{height: 100%;/*background: #222;*/background: #ffffff;background-image: url('../images/bg-3.jpg'); background-repeat: repeat; background-size: auto;}
+.container{max-width: 1180px;margin: 0 auto;}
+
+/*.body h1{color: #51e2c2;font-family: 'Nosifer', cursive;}*/
+.body h2{text-shadow: 0px 20px 5px #101010;}
+
+
+header{background-color: #191919;border-bottom: 5px solid #fff;box-shadow: 1px 1px 8px #464646;}
 header h1{text-align: center;}
 .box-form{padding: 20px 20px;border: 1px solid #ccc; border-radius: 8px 8px;background-color: #ffffff;}
 /*.box-form h1{font-family: 'Luckiest Guy', cursive;}*/
+
+
+.welcome-msg{display:none;}
+
+/*Section Players*/
+
+.section-players{}
+.section-players .img-box{border-radius: 5px;background: #000000;padding: 20px 10px;}
+/*.section-players .title-players{color: #ffffff;}*/
+
+
+
+
+.box-avaliacao{display: none;}
+.box-avaliacao{    
+	background: #fff;
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 20px;
+    max-width: 600px;
+    border: 1px solid #a7a7a7;
+    border-radius: 10px 10px;
+    position: absolute;
+    z-index: 10;
+    left: 50%;
+    margin-left: -300px;
+}
+
+.div-lista-habilidades > div label{min-width: 35%;}
+
+
+.fader{display:none;position: fixed;height: 100%;width: 100%;top: 0;left: 0;background: #000;opacity: 0.7;z-index: 2;}
