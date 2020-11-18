@@ -32,7 +32,7 @@ include_once('includes/header.php');
 			<div class="row">
 				<div class="col-12 mt-2 mb-1">
 					<h1 class="dark-green frijole">Hello, Mr. <span class='welcome-msg nosifer dark-red'><?= $nome; ?> !!!</span></h1>	
-					<input type="hidden" name="id_usuario" value="<?= $iduser;?>">
+					<input id="idUsuario" type="hidden" name="usuario" value="<?= $iduser;?>">
 				</div>
 			</div>
 		</div>
@@ -61,12 +61,14 @@ include_once('includes/header.php');
 	</header>
 
 	<div class="container">
+		<!--
 		<div class="row d-none">
 			<div class="col-12 mt-5 mb-5">
 				<h1 class="dark-green frijole">Hello, Mr. <span class='welcome-msg nosifer dark-red'><?= $nome; ?> !!!</span></h1>	
 				<input type="hidden" name="id_usuario" value="<?= $iduser;?>">
 			</div>
 		</div>
+		-->
 
 		<div>
 			
@@ -97,13 +99,15 @@ include_once('includes/header.php');
 							</button>
 						</div>
 
+						<?php $id_jogador = $row['id'];?>
+
 
 						<!-- Modal Box Avaliação -->
 						<div class="modal fade" id="box_avaliacao_<?php echo $row['id'];?>" tabindex="-1" role="dialog" aria-labelledby="boxAvaliacaoTitle<?php echo $row['id'];?>" aria-hidden="true">
 						  <div class="modal-dialog modal-dialog-centered" role="document">
 						    <div class="modal-content">
 						      <div class="modal-header">
-						      	<input type="hidden" name="idJogador" id="id_jogador_<?php echo $row['id'];?>">
+						      	<input type="hidden" name="jogador" id="id_jogador_<?php echo $row['id'];?>">
 						        <h3 class="modal-title anton dark-grey" id="boxAvaliacaoTitle<?php echo $row['id'];?>"><?php echo utf8_encode($row['nome']);?></h3>
 						        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						          <span aria-hidden="true">&times;</span>
@@ -115,22 +119,35 @@ include_once('includes/header.php');
 										<h5 class="mb-4 font-weight-bold">Avalie as skills de <?php echo utf8_encode($row['apelido']);?></h5>
 										<div class="div-lista-habilidades">
 											<?php foreach($lista_habilidades as $row) : ?>
-												<div>
-													<input type="hidden" name="idHabilidade" id="id_habilidade_<?php echo $row['id'];?>"> 
+											<div class="div-lista-habilides-row d-flex align-items-center">
+												<div class="nome-habilidade">
+													<input type="hidden" name="habilidade" class="input-habilidades" id="id_habilidade_<?php echo $row['id'];?>" value="<?php echo $row['id'];?>"> 
 													<label>
 														<span><img width="20" src="images/ball1.png"></span>
 														<?php echo utf8_encode($row['nome_habilidade']);?>
 													</label>
-													<input type="number" name="pontuacao" id="pontuacao_habilidade" min="1" max="10">
+													<!--<input type="number" name="pontuacao" class="input-pontuacao" id="pontuacao_habilidade_<?php echo $id_jogador; ?>_<?php echo $row['id'];?>" min="1" max="10" value="">-->
 												</div>
+
+												<div class="range-slider">
+												  <input class="range-slider__range input-pontuacao" id="pontuacao_habilidade_<?php echo $id_jogador; ?>_<?php echo $row['id'];?>" type="range" value="5" min="0" max="10">
+												  <span class="range-slider__value"></span>
+												</div>
+											</div>
+
+												<?php $id_habilidade = $row['id'];?>
 											<?php endforeach; ?>
 										</div>
 									</div>
 								</div>
 						      </div>
-						      <div class="modal-footer">
+						      <div class="modal-footer modal-footer-box-avaliacao">
 						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-						        <button type="button" class="btn btn-green" onclick="javascript:salvaHabilidadesJogador()">Salvar</button>
+						        <button type="button" class="btn btn-green bt-salva-pontuacao" onclick="salvaPontuacao(<?php echo $id_jogador;?>);">Salvar</button>
+						      </div>
+						      <div class="modal-footer-msg">
+					      		<p></p>
+				      			<button class="bt-close-modal btn btn-dark" onclick="closeModal(<?php echo $id_jogador;?>);">OK</button>	
 						      </div>
 						    </div>
 						  </div>

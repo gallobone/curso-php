@@ -74,42 +74,63 @@ class Pontuacao
 	public function consultaPontuacao($id_usuario, $id_jogador, $id_habilidade){
 		$sql = new Sql();
 
-		$results = $sql->run_query('SELECT * FROM tb_habilidades_jogador WHERE id_usuario = :USUARIO, id_jogador = :JOGADOR and id_habilidade = :ID_HABILIDADE', array(
+		$results = $sql->run_query('SELECT * FROM tb_habilidade_jogador WHERE id_usuario = :USUARIO and id_jogador = :JOGADOR and id_habilidade = :ID_HABILIDADE', array(
 			":USUARIO"=>$id_usuario,
 			":JOGADOR"=>$id_jogador,
 			":ID_HABILIDADE"=>$id_habilidade
 		));
 
+
 		if(count($results) > 0){
-			echo "EXISTE";
+			//if results > 0 call method to populate grid habilidades
+			/*
+			$row = $results[0];
+
+			$id_usuario = $row['id_usuario'];
+			$id_jogador = $row['id_jogador'];
+			$id_habilidade = $row['id_habilidade'];
+			$pontuacao = $row['pontuacao'];
+
+
+			$this->setIdUsuario($id_usuario);
+			$this->setIdJogador($id_jogador);
+			$this->setIdHabilidade($id_habilidade);
+			$this->setPontuacao($pontuacao);
+
+			//json_encode($results);
+			//return $results;
+			*/
+			$resultado = true;
 		}
 		else{
-			echo "NADA";
+			$resultado = false;
 		}
+		return $resultado;
 	}
+	
 
 
 	public function inserePontuacao($idUsuario, $idJogador, $idHabilidade, $pontuacao){
 		$sql = new Sql();
 
-		$sql->run_query('INSERT INTO tb_habilidades_jogador (id_usuario, id_jogador, id_habilidade, pontuacao) VALUES(:ID_USUARIO, :ID_JOGADOR, :ID_HABILIDADE, :PONTUACAO)', array(
+		$sql->run_query('INSERT INTO tb_habilidade_jogador (id_usuario, id_jogador, id_habilidade, pontuacao) VALUES(:ID_USUARIO, :ID_JOGADOR, :ID_HABILIDADE, :PONTUACAO)', array(
 			":ID_USUARIO"=>$idUsuario,
 			":ID_JOGADOR"=>$idJogador,
 			":ID_HABILIDADE"=>$idHabilidade,
 			":PONTUACAO"=>$pontuacao
 		)); 
 	}
-	
+
 
 
 	public function atualizaPontuacao($idUsuario, $idJogador, $idHabilidade, $pontuacao){
 		$sql = new Sql();
 
-		$sql->run_query('UPDATE tb_habilidades_jogador SET pontuacao = :PONTUACAO WHERE id_usuario = :ID_USUARIO, id_jogador = :ID_JOGADOR, id_habilidade = :ID_HABILIDADE', array(
-			":PONTUACAO"=>$pontuacao,
+		$sql->run_query('UPDATE tb_habilidade_jogador SET pontuacao = :PONTUACAO WHERE id_usuario = :ID_USUARIO and id_jogador = :ID_JOGADOR and id_habilidade = :ID_HABILIDADE', array(
 			":ID_USUARIO"=>$idUsuario,
 			":ID_JOGADOR"=>$idJogador,
 			":ID_HABILIDADE"=>$idHabilidade,
+			":PONTUACAO"=>$pontuacao
 		)); 
 
 	}
