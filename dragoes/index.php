@@ -39,7 +39,7 @@ include_once('includes/header.php');
 
 		<div class="">
 			<div class="container">
-				<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
+				<nav class="navbar navbar-expand-lg navbar-dark justify-content-between">
 					<div class="collapse navbar-collapse">
 						
 					  	<ul class="navbar-nav">
@@ -91,7 +91,7 @@ include_once('includes/header.php');
 				<div class="row boxes">
 					<?php foreach($lista_jogadores as $row) :?>
 						
-						<div class="col-2 mt-4 mb-4 text-center">
+						<div class="col-6 col-sm-6 col-md-3 col-lg-2 col-xl-2  mt-4 mb-4 text-center">
 							<h3 class="title-players anton dark-grey"><?php echo utf8_encode($row['apelido']);?></h3>
 							<div class="img-box"><img style="max-height:140px; max-width: 190px;" src="images/<?php echo $row['image_path'];?>.jpg"></div>
 							<button id="bt_<?php echo $row['id'];?>" type="button" class="btn btn-green btn-block mt-2" onclick="javascript:exibeBoxAvaliacao(<?php echo $row['id'];?>)">
