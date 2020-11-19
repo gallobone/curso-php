@@ -125,4 +125,15 @@ header h1{text-align: center;}
 .modal-footer-msg{display: none;justify-content: space-between;align-items: center;padding: 1rem 1.5rem;}
 .modal-footer-msg p{font-weight: bold; margin: 1rem 0;}
 
+
+
+.section-ranking{background: #fff; padding: 0.75rem 3.5rem; border: 1px solid #ccc; box-shadow: 1px 20px 40px #888;}
+.section-ranking .info-ranking {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 0.5rem 2.5rem 0.5rem;
+    border-bottom: 1px solid #888;
+}
+
 .fader{display:none;position: fixed;height: 100%;width: 100%;top: 0;left: 0;background: #000;opacity: 0.7;z-index: 2;}

@@ -132,7 +132,29 @@ class Pontuacao
 			":ID_HABILIDADE"=>$idHabilidade,
 			":PONTUACAO"=>$pontuacao
 		)); 
+	}
 
+
+
+	public function exibeRanking($idUsuario){
+		$sql = new Sql();
+
+		$result = $sql->run_query('
+			SELECT tb_habilidade_jogador.id_jogador, tb_jogadores.apelido, SUM(tb_habilidade_jogador.pontuacao) AS pontuacao 
+			FROM tb_habilidade_jogador 
+			INNER JOIN tb_jogadores ON tb_habilidade_jogador.id_jogador = tb_jogadores.id 
+			WHERE tb_habilidade_jogador.id_usuario = :ID_USUARIO 
+			GROUP BY tb_habilidade_jogador.id_jogador 
+			ORDER BY pontuacao DESC', array(
+			":ID_USUARIO"=>$idUsuario
+		));
+
+
+		//var_dump($result);
+		//$resultado = json_encode($result);
+		echo json_encode($result);
+
+		return $result;
 	}
 
 

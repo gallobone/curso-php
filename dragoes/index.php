@@ -2,15 +2,24 @@
 
 require_once('config.php');
 
+include_once('includes/header.php');
 
-$nome = $_GET['user'];
-$iduser = $_GET['iduser'];
+//$nome = $_GET['user'];
+//$iduser = $_GET['iduser'];
+
+//session_start();
 
 
-if($nome == NULL){
-	header("location: login.php?login=no_session");
-}
-else{
+
+
+//echo "Seu nome é: ". $login;
+//echo "Seu ID é: ". $id_usuario;
+
+
+//if($nome == NULL){
+//	header("location: login.php?login=no_session");
+//}
+//else{
 
 	$obj = new Jogadores();
 	$lista_jogadores = $obj->getJogadores();
@@ -18,47 +27,11 @@ else{
 	$objHabilidades = new Habilidades();
 	$lista_habilidades = $objHabilidades->getListaHabilidades();
 
-}
+//}
 
-
-
-
-include_once('includes/header.php');
 
 ?>
 
-	<header>
-		<div class="container">
-			<div class="row">
-				<div class="col-12 mt-2 mb-1">
-					<h1 class="dark-green frijole">Hello, Mr. <span class='welcome-msg nosifer dark-red'><?= $nome; ?> !!!</span></h1>	
-					<input id="idUsuario" type="hidden" name="usuario" value="<?= $iduser;?>">
-				</div>
-			</div>
-		</div>
-
-		<div class="">
-			<div class="container">
-				<nav class="navbar navbar-expand-lg navbar-dark justify-content-between">
-					<div class="collapse navbar-collapse">
-						
-					  	<ul class="navbar-nav">
-						    <li class="nav-item active">
-						    	<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-						    </li>
-						    <li class="nav-item">
-						    	<a class="nav-link" href="#">Players</a>
-						    </li>
-						    <li class="nav-item">
-						    	<a class="nav-link" href="#">Ranking</a>
-						    </li>
-					  	</ul>
-					  	
-					</div>
-				</nav>	
-			</div>
-		</div>
-	</header>
 
 	<div class="container">
 		<!--

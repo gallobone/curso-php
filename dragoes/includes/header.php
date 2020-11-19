@@ -2,6 +2,22 @@
 
 //header
 
+session_start();
+
+$login = $_SESSION["login"];
+$id_usuario = $_SESSION["id_usuario"];
+
+
+if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['id_usuario']) == true))
+{
+  	unset($_SESSION['login']);
+  	unset($_SESSION['id_usuario']);
+
+  	header('location:login.php?login=false');
+ }
+
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,3 +47,35 @@
 
 <body class="body">
 	<div class="all">
+		<header>
+			<div class="container">
+				<div class="row">
+					<div class="col-12 mt-2 mb-1">
+						<h1 class="dark-green frijole">Hello, Mr. <span class='welcome-msg nosifer dark-red'><?= $login; ?> !!!</span></h1>	
+						<input id="idUsuario" type="hidden" name="usuario" value="<?= $id_usuario;?>">
+					</div>
+				</div>
+			</div>
+
+			<div class="div-menu">
+				<div class="container">
+					<nav class="navbar navbar-expand-lg navbar-dark justify-content-between">
+						<div class="collapse navbar-collapse">
+							
+						  	<ul class="navbar-nav">
+							    <li class="nav-item active">
+							    	<a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+							    </li>
+							    <li class="nav-item">
+							    	<a class="nav-link" href="#">Players</a>
+							    </li>
+							    <li class="nav-item">
+							    	<a class="nav-link" href="ranking.php">Ranking</a>
+							    </li>
+						  	</ul>
+						  	
+						</div>
+					</nav>	
+				</div>
+			</div>
+		</header>
