@@ -10,10 +10,11 @@ $id_usuario = $_SESSION["id_usuario"];
 
 if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['id_usuario']) == true))
 {
+	
   	unset($_SESSION['login']);
   	unset($_SESSION['id_usuario']);
 
-  	header('location:login.php?login=false');
+  	header('location:login.php?login=no_session');
  }
 
 
@@ -50,32 +51,47 @@ if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['id_usuario']) =
 		<header>
 			<div class="container">
 				<div class="row">
-					<div class="col-12 mt-2 mb-1">
-						<h1 class="dark-green frijole">Hello, Mr. <span class='welcome-msg nosifer dark-red'><?= $login; ?> !!!</span></h1>	
-						<input id="idUsuario" type="hidden" name="usuario" value="<?= $id_usuario;?>">
+					<div class="col-12 mt-2 mb-1 text-left">
+						<!--<h1 class="dark-green frijole">Hello, Mr. <span class='welcome-msg nosifer dark-red'><?= $login; ?> !!!</span></h1>	
+						<input id="idUsuario" type="hidden" name="usuario" value="<?= $id_usuario;?>">-->
+						<h1 class="nosifer mutant-green">M<img style="max-width: 50px;" src="images/ball3.png">nsters</h1>
+						<div class="username-box text-right">
+							<span class="white">Hello, Mr. <span class='welcome-msg nosifer green-ocean'><?= $login; ?></span></span>	
+							<input id="idUsuario" type="hidden" name="usuario" value="<?= $id_usuario;?>">
+						</div>		
 					</div>
 				</div>
 			</div>
 
 			<div class="div-menu">
 				<div class="container">
-					<nav class="navbar navbar-expand-lg navbar-dark justify-content-between">
-						<div class="collapse navbar-collapse">
-							
-						  	<ul class="navbar-nav">
-							    <li class="nav-item active">
-							    	<a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-							    </li>
-							    <li class="nav-item">
-							    	<a class="nav-link" href="#">Players</a>
-							    </li>
-							    <li class="nav-item">
-							    	<a class="nav-link" href="ranking.php">Ranking</a>
-							    </li>
-						  	</ul>
-						  	
+					<div class="row">
+						<div class="col-6">
+							<nav class="navbar navbar-expand-lg navbar-dark justify-content-between">
+								<div class="collapse navbar-collapse">
+									
+								  	<ul class="navbar-nav">
+									    <li class="nav-item">
+									    	<a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+									    </li>
+									    <li class="nav-item">
+									    	<a class="nav-link" href="#">Players</a>
+									    </li>
+									    <li class="nav-item">
+									    	<a class="nav-link" href="#">Team</a>
+									    </li>
+									    <li class="nav-item">
+									    	<a class="nav-link" href="">Your Ranking</a>
+									    </li>
+									    <li class="nav-item">
+									    	<a class="nav-link" href="ranking.php">General Ranking</a>
+									    </li>
+								  	</ul>
+								  	
+								</div>
+							</nav>
 						</div>
-					</nav>	
+					</div>
 				</div>
 			</div>
 		</header>

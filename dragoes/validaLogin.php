@@ -11,10 +11,10 @@ $obj->setUsuario($login);
 $obj->setSenha($senha);
 
 
-$islogged = $obj->validaLogin($login, $senha);
+$isLogged = $obj->validaLogin($login, $senha);
 
 
-if($islogged){
+if($isLogged){
 
 	session_start();
 
@@ -27,7 +27,7 @@ if($islogged){
 	//header("location: index.php?user=".$user."&iduser=".$iduser);
 	header("location: index.php");
 }
-else{
+else {
 
 	unset($_SESSION["login"]);
 	unset($_SESSION["id_usuario"]);

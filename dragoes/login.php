@@ -53,9 +53,9 @@ $login = $_GET['login'];
 					</div>
 
 					<div class="msg mt-5 nosifer">
-						<?php if($login == 'false') : ?>
+						<?php if($login === 'false') : ?>
 								<?= "<h3 class='red-blood'>LOGIN FAILED</h3><br/>";?>
-						<?php elseif($login == 'no_session') : ?>
+						<?php elseif($login === 'no_session') : ?>
 								<?= "<h3 class='strong-yellow'>Faça o Login</h3><br/>" ;?>
 						<?php endif;?>
 					</div>

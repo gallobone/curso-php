@@ -39,6 +39,7 @@
 .white{color:#ffffff;}
 .green-ocean{color:#56ccb2}
 .dark-green{color: #709459;}
+.mutant-green{color: #88b969;}
 .first-orange{color: #e0803a;}
 .strong-orange{color: #ff6000}
 .dark-pinky{color: #ff1c4f}
@@ -59,6 +60,8 @@
 .btn-green{background-color:#517548;color: #ffff;}
 .btn-green:hover{background-color:#70a263;}
 
+/*menu*/
+.nav-link.active{color:#54a3bb!important;}
 
 /*styles*/
 html{height: 100%;}
@@ -82,17 +85,26 @@ body.body{height: 100%;/*background: #222;*/background: #ffffff;background-image
 
 
 header{background-color: #191919;border-bottom: 5px solid #fff;box-shadow: 1px 1px 8px #464646;}
-header h1{text-align: center;}
+header h1{text-align: left;}
+header .img-header-logo{max-width: 100px; height: auto;}
+.username-box{position: absolute; top: 2px; right: 0; font-size: 0.65rem;margin-right:15px;}
+
 .box-form{padding: 20px 20px;border: 1px solid #ccc; border-radius: 8px 8px;background-color: #ffffff;}
 /*.box-form h1{font-family: 'Luckiest Guy', cursive;}*/
 
 
-.welcome-msg{display:none;}
+.welcome-msg, .text-fade, .info-ranking p{display:none;}
+
 
 /*Section Players*/
 
-.section-players{}
-.section-players .img-box{border-radius: 5px;background: #000000;padding: 20px 10px;}
+.section-players .boxes .box-player{
+	background: #fff;
+    border: 1px solid #ad9b9b;
+    padding: 1.0rem 1.0rem;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0px 10px 15px 5px #999;}
+.section-players .img-box{border-radius: 5px;background: #e2e2e2;padding: 20px 10px;border: 1px solid #636363;}
 /*.section-players .title-players{color: #ffffff;}*/
 
 
@@ -135,5 +147,9 @@ header h1{text-align: center;}
     margin: 0.5rem 0.5rem 2.5rem 0.5rem;
     border-bottom: 1px solid #888;
 }
+
+.section-ranking .info-ranking:first-child h3{font-size:4rem;}
+.section-ranking .info-ranking:nth-child(2) h3{font-size:3.0rem;}
+.section-ranking .info-ranking:nth-child(3) h3{font-size:2.5rem;}
 
 .fader{display:none;position: fixed;height: 100%;width: 100%;top: 0;left: 0;background: #000;opacity: 0.7;z-index: 2;}

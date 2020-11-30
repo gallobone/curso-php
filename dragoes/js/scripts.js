@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+	setMenu();
+
 	$("#bt_login").on('click', function(){
 		validaLogin();
 	})
@@ -11,11 +13,8 @@ $(document).ready(function() {
          }
     });
 
-
-	animateWelcomeMsg();
+	fadeText();
 	//listaHabilidades();
-
-
 
 	rangeSlider();
 
@@ -27,9 +26,10 @@ $(document).ready(function() {
 //end of jquery ready
 
 
-//begin functions
-function animateWelcomeMsg(){
+//functions
+function fadeText(){
 	$(".welcome-msg").fadeIn(1500);
+	$(".text-fade, .info-ranking p").fadeIn(1500);
 }
 
 
@@ -210,7 +210,6 @@ function salvaPontuacao(id_jogador){
 
 
 
-
 //function closeFader(){$(".fader, .box-avaliacao").hide();}
 
 function closeModal(id_jogador){
@@ -255,6 +254,15 @@ var rangeSlider = function(){
     });
   });
 };
+
+
+function setMenu(){
+	var url = location.pathname.split("/").pop();
+	$('.navbar-nav .nav-item a[href^="'+ url +'"]').addClass('active');	
+}
+
+  
+
 
 
 
