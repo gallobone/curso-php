@@ -78,7 +78,7 @@ if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['id_usuario']) =
 									    	<a class="nav-link" href="#">Players</a>
 									    </li>
 									    <li class="nav-item">
-									    	<a class="nav-link" href="#">Team</a>
+									    	<a class="nav-link" href="team.php">Team</a>
 									    </li>
 									    <li class="nav-item">
 									    	<a class="nav-link" href="">Your Ranking</a>

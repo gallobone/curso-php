@@ -29,7 +29,7 @@ $(document).ready(function() {
 //functions
 function fadeText(){
 	$(".welcome-msg").fadeIn(1500);
-	$(".text-fade, .info-ranking p").fadeIn(1500);
+	$(".text-fade, .info-ranking p, .img-soccer-field-base").fadeIn(1500);
 }
 
 
