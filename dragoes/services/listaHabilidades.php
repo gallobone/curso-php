@@ -6,13 +6,13 @@ header('Content-Type: text/html; charset=utf-8');
 
 
 
-require_once('config.php');
+//require_once('../config.php');
+require_once('../classes/Sql.php');
+require_once('../classes/Habilidades.php');
 
 
 $obj = new Habilidades();
 $lista_habilidades = $obj->getListaHabilidades();
-
-//utf8_encode($lista_habilidades);
 
 //var_dump($lista_habilidades);
 

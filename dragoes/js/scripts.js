@@ -39,7 +39,7 @@ function validaLogin(){
 	var senha = $("#password").val();
 
 	$.ajax({
-	  url: 'http://localhost:9000/dragoes/validaLogin.php',
+	  url: 'http://localhost:9000/dragoes/services/validaLogin.php',
 	  type: 'POST',
 	  dataType: 'json',
 	  data: {login: login, senha: senha},
@@ -78,7 +78,7 @@ function validaLogin(){
 
 function listaHabilidades(){
 	$.ajax({
-	  url: 'http://localhost:9000/dragoes/listaHabilidades.php',
+	  url: 'http://localhost:9000/dragoes/services/listaHabilidades.php',
 	  type: 'POST',
 	  dataType: 'JSON',
 	  //data: {param1: 'value1'},
@@ -108,7 +108,7 @@ function consultaPontuacao(id_usuario, id_jogador, id_habilidade){
 	var id_habilidade = id_habilidade;
 
 	$.ajax({
-	  url: 'http://localhost:9000/dragoes/consultaPontuacao.php?id_usuario='+id_usuario+'&id_jogador='+id_jogador+'&id_habilidade='+id_habilidade+'',
+	  url: 'http://localhost:9000/dragoes/services/consultaPontuacao.php?id_usuario='+id_usuario+'&id_jogador='+id_jogador+'&id_habilidade='+id_habilidade+'',
 	  type: 'GET',
 	  //dataType: 'json',
 	  //data: {id_usuario: id_usuario, id_jogador: id_jogador, id_habilidade: id_habilidade},
@@ -188,7 +188,7 @@ function salvaPontuacao(id_jogador){
 		console.log("PONTUACAO: " +pontuacao_val);
 
 		$.ajax({
-		  url: 'http://localhost:9000/dragoes/salvaPontuacao.php',
+		  url: 'http://localhost:9000/dragoes/services/salvaPontuacao.php',
 		  type: 'POST',
 		  //dataType: 'json',
 		  data: {id_usuario: id_usuario, id_jogador: id_jogador, id_habilidade: id_habilidade, pontuacao: pontuacao_val},
@@ -259,6 +259,70 @@ var rangeSlider = function(){
 function setMenu(){
 	var url = location.pathname.split("/").pop();
 	$('.navbar-nav .nav-item a[href^="'+ url +'"]').addClass('active');	
+}
+
+function logOut(){
+	$.ajax({
+		url: 'http://localhost:9000/dragoes/services/logOut.php',
+		type: 'POST'
+		//dataType: 'json'
+		//data: {param1: 'value1'},
+	})
+	.done(function() {
+		console.log("success");
+	})
+	.fail(function() {
+		console.log("error");
+	})
+	.always(function() {
+		console.log("complete");
+	});
+}
+
+
+function buscaJogadores(){
+	console.log("entrou na function");
+	
+	var nome = $("#search_field").val();
+	//console.log(nome);
+
+	$.ajax({
+	  url: 'http://localhost:9000/dragoes/services/buscaJogadores.php',
+	  type: 'POST',
+	  dataType: 'json',
+	  data: {nome: nome},
+	  complete: function(xhr, textStatus) {
+	    //alert("completo");
+	    //console.log(data);
+	  },
+	  success: function(data, textStatus, xhr) {
+	    alert("Sucesso");
+	    
+
+	    $.each(data, function(index, val) {
+
+	    	console.log(data[index].id);
+	    	console.log(data[index].apelido);
+	    	console.log(data[index].nome);
+	    	console.log(data[index].image_path);
+
+
+	    	$(".row-search-players").append('<div class="col-6 col-sm-6 col-md-3 col-lg-2 col-xl-2  mt-4 mb-4 text-center pl-1 pr-1">'+
+							'<div class="box-player">'+
+								'<h3 class="title-players anton dark-grey">'+data[index].apelido+'</h3>'+
+								'<div class="img-box"><img onclick="javascript:exibeBoxAvaliacao('+data[index].id+')" class="zoom" style="cursor:pointer;max-height:140px; max-width: 190px;" src="images/'+data[index].image_path+'.jpg"></div>'+
+								'<button id="bt_'+data[index].id+'" type="button" class="btn btn-green btn-block mt-2" onclick="javascript:exibeBoxAvaliacao('+data[index].id+')">'+
+									'Avalie'+
+								'</button>	'+
+							'</div>'+
+						'</div>')
+	    });
+	  },
+	  error: function(xhr, textStatus, errorThrown) {
+	    alert("Errou");
+	  }
+	});
+	
 }
 
   

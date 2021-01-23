@@ -3,7 +3,7 @@
 
 /**
  * 
- criando a classe Sql que extende a classe nativa do php, a classe PDO
+ Criando a classe Sql que extende a classe nativa do php, a classe PDO
  */
 class Sql extends PDO
 {
@@ -83,8 +83,6 @@ class Sql extends PDO
 
 	private function setParam($statment, $key, $value){
 		$statment->bindParam($key, $value);
-
-
 	}
 
 
@@ -117,6 +115,3 @@ class Sql extends PDO
 
 
 }
-
-
-?>

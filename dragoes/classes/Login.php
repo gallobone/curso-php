@@ -48,7 +48,7 @@ class Login
 	}
 	*/
 
-	public function validaLogin($usuario, $senha){
+	public function validaLogin(string $usuario, string $senha):bool{
 
 		$sql = new Sql();
 
@@ -56,8 +56,6 @@ class Login
 			":LOGIN"=> $usuario,
 			":SENHA"=> $senha
 			));
-
-
 		
 		if(count($results) > 0){
 
@@ -84,10 +82,4 @@ class Login
 
 	}
 
-
-
 }
-
-
-
-?>

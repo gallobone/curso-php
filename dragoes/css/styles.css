@@ -59,7 +59,8 @@
 /*buttons*/
 .btn-green{background-color:#517548;color: #ffff;}
 .btn-green:hover{background-color:#70a263;}
-
+.btn-logout{border-radius: 3px 3px 3px 3px;background: #515d5f;padding: 0.20rem 1.1rem;border: 1px solid #bbb2b2;color: #fff;text-decoration: none;}
+.btn-logout:hover{color: #fff; text-decoration: underline;}
 /*menu*/
 .nav-link.active{color:#54a3bb!important;}
 
@@ -84,7 +85,7 @@ body.body{height: 100%;/*background: #222;*/background: #ffffff;background-image
 .container{max-width: 1180px;margin: 0 auto;}
 
 /*.body h1{color: #51e2c2;font-family: 'Nosifer', cursive;}*/
-.body h2{text-shadow: 0px 20px 5px #101010;}
+/*.body h2{text-shadow: 0px 20px 5px #101010;}*/
 
 
 header{background-color: #191919;border-bottom: 5px solid #fff;box-shadow: 1px 1px 8px #464646;}
@@ -172,3 +173,16 @@ header .img-header-logo{max-width: 100px; height: auto;}
 .section-ranking .info-ranking:nth-child(3) h3{font-size:2.5rem;}
 
 .fader{display:none;position: fixed;height: 100%;width: 100%;top: 0;left: 0;background: #000;opacity: 0.7;z-index: 2;}
+
+
+/*media queries*/
+
+@media (max-width: 991px){
+	.username-box{display: none;}
+	.menu-logout{display: block;}
+}
+
+@media (min-width: 992px){
+	/*.username-box{display: block;}*/
+	.menu-logout{display: none;}	
+}

@@ -1,9 +1,13 @@
 <?php
 
-require_once('config.php');
+//require_once('../config.php');
+require_once('../classes/Sql.php');
+require_once('../classes/Login.php');
 
 $login = $_POST['login'];
 $senha = $_POST['senha'];
+
+//use classes\Login;
 
 $obj = new Login();
 
@@ -25,13 +29,13 @@ if($isLogged){
 	$_SESSION["id_usuario"] = $id_usuario;
 
 	//header("location: index.php?user=".$user."&iduser=".$iduser);
-	header("location: index.php");
+	header("location: ../index.php");
 }
 else {
 
 	unset($_SESSION["login"]);
 	unset($_SESSION["id_usuario"]);
 
-	header("location: login.php?login=false");
+	header("location: ../login.php?login=false");
 }
 

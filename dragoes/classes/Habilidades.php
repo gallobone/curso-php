@@ -30,7 +30,7 @@ class Habilidades
 
 
 
-	public function getListaHabilidades(){
+	public function getListaHabilidades():array{
 
 		$sql = new Sql();
 		$results = $sql->run_query('SELECT * FROM tb_habilidades');
@@ -38,8 +38,6 @@ class Habilidades
 		json_encode($results);
 
 		return $results;
-
-
 	}
 	
 	/*function __construct(argument)

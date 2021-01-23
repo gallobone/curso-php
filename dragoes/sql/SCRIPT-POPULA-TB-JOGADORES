@@ -1,0 +1,31 @@
+INSERT INTO 
+	tb_jogadores (nome, posicao, apelido, image_path) 
+VALUES 
+	("Édson Arantes do Nascimento", "Meia Atacante", "Pelé", "pele"),
+	("Diego Armando Maradona", "Meia Atacante", "Maradona", "maradona"),
+	("Paolo Cesare Maldini", "Zagueiro", "Maldini", "maldini"),
+	("Johan Cruyff", "Meia", "Cruyff", "cruyff"),
+	("Zinedine Zidane", "Meia Atacante", "Zidane", "zidane"),
+	("Ronaldo Nazário", "Atacante", "Ronaldo", "ronaldo"),
+	("Lionel Messi", "Meia Atacante", "Messi", "messi"),
+	("Andrea Pirlo", "Volante", "Pirlo", "pirlo"),
+	("Romário", "Atacante", "Romário", "romario"),
+	("Gabriel Batistuta", "Atacante", "Batistuta", "batistuta"),
+	("Francesco Totti", "Meia Atacante", "Totti", "totti"),
+	("Artur Antunes Coimbra", "Meia Atacante", "Zico", "zico"),
+	("Alessandro Nesta", "Zagueiro", "Nesta", "nesta"),
+	("Zlatan Ibrahimovic", "Atacante", "Ibrahimovic", "ibrahimovic"),
+	("Franco Baresi", "Zagueiro", "Baresi", "baresi"),
+	("Cristiano Ronaldo", "Atacante", "C. Ronaldo", "cristiano"),
+	("Neymar", "Atacante", "Neymar", "neymar"),
+	("Andres Iniesta", "Meia Atacante", "Iniesta", "iniesta"),
+	("Juan Pablo Sorin", "Lateral Esquerdo", "Sorin", "sorin"),
+	("Edinson Cavani", "Atacante", "Cavani", "cavani"),
+	("Ronaldo de Asis Moreira", "Meia Atacante", "Ronaldinho", "ronaldinho_gaucho"),
+	("Thierry Daniel Henry", "Atacante", "Thierry Henry", "henry"),
+	("Roberto Baggio", "Meia Atacante", "R. Baggio", "baggio"),
+	("Ricardo Izecson dos Santos Leite", "Meia Atacante", "Kaká", "kaka");
+
+	
+
+	

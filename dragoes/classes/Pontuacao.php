@@ -140,19 +140,34 @@ class Pontuacao
 		$sql = new Sql();
 
 		$result = $sql->run_query('
-			SELECT tb_habilidade_jogador.id_jogador, tb_jogadores.apelido, SUM(tb_habilidade_jogador.pontuacao) AS pontuacao 
+			SELECT tb_habilidade_jogador.id_jogador, tb_jogadores.apelido, SUM(tb_habilidade_jogador.pontuacao) AS pontuacao, CAST(AVG(tb_habilidade_jogador.pontuacao) AS DECIMAL(12,2)) AS media 
 			FROM tb_habilidade_jogador 
 			INNER JOIN tb_jogadores ON tb_habilidade_jogador.id_jogador = tb_jogadores.id 
 			WHERE tb_habilidade_jogador.id_usuario = :ID_USUARIO 
 			GROUP BY tb_habilidade_jogador.id_jogador 
-			ORDER BY pontuacao DESC', array(
+			ORDER BY media DESC', array(
 			":ID_USUARIO"=>$idUsuario
 		));
 
-
 		//var_dump($result);
 		//$resultado = json_encode($result);
-		echo json_encode($result);
+		json_encode($result);
+
+		return $result;
+	}
+
+
+	public function exibeGeneralRanking(){
+		$sql = new Sql();
+
+		$result = $sql->run_query('
+			SELECT tb_habilidade_jogador.id_jogador, tb_jogadores.apelido, SUM(tb_habilidade_jogador.pontuacao) AS pontuacao, CAST(AVG(tb_habilidade_jogador.pontuacao) AS DECIMAL(12,2)) AS media 
+			FROM tb_habilidade_jogador 
+			INNER JOIN tb_jogadores ON tb_habilidade_jogador.id_jogador = tb_jogadores.id 
+			GROUP BY tb_habilidade_jogador.id_jogador 
+			ORDER BY media DESC');
+
+		json_encode($result);
 
 		return $result;
 	}

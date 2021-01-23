@@ -1,6 +1,7 @@
 <?php 
 
 //header
+require_once('config.php');
 
 session_start();
 
@@ -10,7 +11,6 @@ $id_usuario = $_SESSION["id_usuario"];
 
 if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['id_usuario']) == true))
 {
-	
   	unset($_SESSION['login']);
   	unset($_SESSION['id_usuario']);
 
@@ -18,6 +18,17 @@ if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['id_usuario']) =
  }
 
 
+function logOut()
+{
+	session_unset();
+	session_destroy();
+
+	header("location: login.php?login=no_session");
+}
+
+  if (isset($_GET['logout'])) {
+  	logOut();
+  }
 
 ?>
 <!DOCTYPE html>
@@ -58,19 +69,27 @@ if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['id_usuario']) =
 						<div class="username-box text-right">
 							<span class="white">Hello, Mr. <span class='welcome-msg nosifer green-ocean'><?= $login; ?></span></span>	
 							<input id="idUsuario" type="hidden" name="usuario" value="<?= $id_usuario;?>">
+							<br/>
+							<br/>
+							<!--<a class="btn-logout" href="services/logOut.php">Logout</a>-->
+							<a class="btn-logout" href="index.php?logout=true">Logout</a>
 						</div>		
 					</div>
 				</div>
 			</div>
 
+
 			<div class="div-menu">
 				<div class="container">
 					<div class="row">
-						<div class="col-6">
+						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							<nav class="navbar navbar-expand-lg navbar-dark justify-content-between">
-								<div class="collapse navbar-collapse">
+							  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							    	<span class="navbar-toggler-icon"></span>
+							  	</button>
+								<div class="collapse navbar-collapse" id="navbarSupportedContent">
 									
-								  	<ul class="navbar-nav">
+								  	<ul class="navbar-nav mr-auto">
 									    <li class="nav-item">
 									    	<a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
 									    </li>
@@ -81,12 +100,22 @@ if((!isset ($_SESSION['login']) == true) and (!isset ($_SESSION['id_usuario']) =
 									    	<a class="nav-link" href="team.php">Team</a>
 									    </li>
 									    <li class="nav-item">
-									    	<a class="nav-link" href="">Your Ranking</a>
+									    	<a class="nav-link" href="ranking.php">Your Ranking</a>
 									    </li>
 									    <li class="nav-item">
-									    	<a class="nav-link" href="ranking.php">General Ranking</a>
+									    	<a class="nav-link" href="general-ranking.php">General Ranking</a>
+									    </li>
+
+									    <li class="nav-item-logout menu-logout">
+									    	<a class="nav-link" href="index.php?logout=true">Logout</a>
 									    </li>
 								  	</ul>
+
+								  	<form class="form-inline my-2 my-lg-0">
+								      <input id="search_field" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+								      <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>-->
+								    </form>
+								    <button class="btn btn-outline-success my-2 my-sm-0" onclick="javascript:buscaJogadores()">Buscar</button>
 								  	
 								</div>
 							</nav>

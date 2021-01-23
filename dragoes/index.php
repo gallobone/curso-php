@@ -1,20 +1,17 @@
 <?php
 
-require_once('config.php');
+
 
 include_once('includes/header.php');
 
 
 	$obj = new Jogadores();
 	$listaJogadores = $obj->getJogadores();
+	$buscaJogadores = $obj->searchJogadores('Ronaldo');
 
 	$objHabilidades = new Habilidades();
 	$listaHabilidades = $objHabilidades->getListaHabilidades();
-
-
-
 ?>
-
 
 	<div class="container">
 		<section class="section-players mt-4">
@@ -25,7 +22,7 @@ include_once('includes/header.php');
 						<div class="col-6 col-sm-6 col-md-3 col-lg-2 col-xl-2  mt-4 mb-4 text-center pl-1 pr-1">
 							<div class="box-player">
 								<h3 class="title-players anton dark-grey"><?php echo utf8_encode($row['apelido']);?></h3>
-								<div class="img-box"><img style="max-height:140px; max-width: 190px;" src="images/<?php echo $row['image_path'];?>.jpg"></div>
+								<div class="img-box"><img onclick="javascript:exibeBoxAvaliacao(<?php echo $row['id'];?>)" class="zoom" style="cursor:pointer;max-height:140px; max-width: 190px;" src="images/<?php echo $row['image_path'];?>.jpg"></div>
 								<button id="bt_<?php echo $row['id'];?>" type="button" class="btn btn-green btn-block mt-2" onclick="javascript:exibeBoxAvaliacao(<?php echo $row['id'];?>)">
 									Avalie
 								</button>	
@@ -92,8 +89,31 @@ include_once('includes/header.php');
 			</div>
 		</section>
 
+		<!--Begin Search Players Section -->
+		<section class="search-players">
+			<h1>Resultados da busca: </h1>
+			<div class="container">
+				<div class="row boxes row-search-players">
+					<?php foreach($buscaJogadores as $row) :?>
+						
+						<div class="col-6 col-sm-6 col-md-3 col-lg-2 col-xl-2  mt-4 mb-4 text-center pl-1 pr-1">
+							<div class="box-player">
+								<h3 class="title-players anton dark-grey"><?php echo utf8_encode($row['apelido']);?></h3>
+								<div class="img-box"><img onclick="javascript:exibeBoxAvaliacao(<?php echo $row['id'];?>)" class="zoom" style="cursor:pointer;max-height:140px; max-width: 190px;" src="images/<?php echo $row['image_path'];?>.jpg"></div>
+								<button id="bt_<?php echo $row['id'];?>" type="button" class="btn btn-green btn-block mt-2" onclick="javascript:exibeBoxAvaliacao(<?php echo $row['id'];?>)">
+									Avalie
+								</button>	
+							</div>
+						</div>
+
+						<?php $idJogador = $row['id'];?>
+					<?php endforeach; ?>
+				</div>
+			</div>
+		</section>
+		<!--End Search Players Section -->
+
 	</div>
 
 <?php
 	include_once('includes/footer.php');
-?>

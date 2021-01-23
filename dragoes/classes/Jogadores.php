@@ -69,6 +69,21 @@ class Jogadores
 	}
 
 
+	public function searchJogadores($name):array
+	{
+		$sql = new Sql();
+
+		$results = $sql->run_query("SELECT * FROM tb_jogadores WHERE nome LIKE CONCAT('%', :NOME,  '%' )", array(
+			":NOME"=>$name
+		));
+
+		json_encode($results);
+
+		return $results;
+		//print_r($results);
+	}
+
+
 	
 	/*
 	function __construct()

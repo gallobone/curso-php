@@ -2,6 +2,24 @@
 
 $login = $_GET['login'];
 
+//echo session_status();
+
+switch (session_status()) {
+	case PHP_SESSION_DISABLED: //conforme explicado acima, a constante PHP_SESSION_DISABLED tambem poderia ser usada aqui, no lugar do 0
+		//echo "Sessão desabilitada";
+		break;
+
+	case PHP_SESSION_NONE: //conforme explicado acima, a constante PHP_SESSION_NONE tambem poderia ser usada aqui, no lugar do 1
+		//echo "Sessão habilitada, mas nao iniciada";
+		//header('location:index.php');
+		break;
+
+	case PHP_SESSION_ACTIVE: //conforme explicado acima, a constante PHP_SESSION_ACTIVE tambem poderia ser usada aqui, no lugar do 2
+		echo "Sessão habilitada e iniciada";
+		header('location:index.php');
+		break;	
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +52,7 @@ $login = $_GET['login'];
 
 						<!--<div class="logo text-center"><img src="images/logo-dbfc.png"></div>-->
 
-						<form id="formlogin" name="formlogin" action="validaLogin.php" method="post">
+						<form id="formlogin" name="formlogin" action="services/validaLogin.php" method="post">
 
 						  <div class="form-group">
 						    <label for="username">Username</label>

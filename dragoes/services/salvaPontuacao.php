@@ -1,7 +1,9 @@
 <?php
 
 
-require_once('config.php');
+//require_once('../config.php');
+require_once('../classes/Sql.php');
+require_once('../classes/Pontuacao.php');
 
 
 $id_usuario = $_POST['id_usuario'];
@@ -21,7 +23,7 @@ $result = $obj->consultaPontuacao($id_usuario, $id_jogador, $id_habilidade);
 $valida_result = json_encode($result);
 echo "<br/>RESULT = " . $valida_result. "<br/>";
 
-if($valida_result == "true"){
+if($valida_result === "true"){
 	echo "<br/>JÁ POSSUI REGISTROS";
 	$obj->atualizaPontuacao($id_usuario, $id_jogador, $id_habilidade, $pontuacao);
 }

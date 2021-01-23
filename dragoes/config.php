@@ -9,6 +9,7 @@
 spl_autoload_register(function($className){
 
 	//Abaixo a variável $filename traz o PATH do arquivo("classe php") que será carregado na pagina index.php
+	//$filepath = "..".DIRECTORY_SEPARATOR."classes".DIRECTORY_SEPARATOR. $className. ".php";
 	$filepath = "classes".DIRECTORY_SEPARATOR. $className. ".php";
 
 	if( file_exists($filepath) ) {
@@ -17,5 +18,3 @@ spl_autoload_register(function($className){
 	
 });
 
-
-?>

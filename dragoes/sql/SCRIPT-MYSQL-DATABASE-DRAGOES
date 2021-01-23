@@ -16,6 +16,7 @@ id INT UNSIGNED NOT NULL AUTO_INCREMENT,
 nome VARCHAR(65) NOT NULL, 
 posicao VARCHAR(65), 
 apelido VARCHAR(65),
+image_path VARCHAR(65),
 
 PRIMARY KEY (id)
 );
