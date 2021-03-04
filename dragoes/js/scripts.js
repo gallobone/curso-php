@@ -22,8 +22,84 @@ $(document).ready(function() {
 		closeFader();
 	});
 
+
+	
+	//initDraggable();
+	hoverPlayers();
+	selectJogador();
+
+	toggleBoxLogin();
+
+
+
+	var queryString = window.location.search;
+	var urlParams = new URLSearchParams(queryString);
+	var loginParam = urlParams.get('login');
+
+	if(loginParam === "incomplete_data"){
+		$(".box-form.login").hide();
+		$(".box-form.cadastro").fadeIn(400);
+	}
+
 });
 //end of jquery ready
+
+
+function toggleBoxLogin(){
+	$("#bt_display_login").on('click', function(){
+		$(".box-form.cadastro").hide();
+		$(".msg h3").hide();
+		$(".box-form.login").fadeIn(400);
+	});
+
+	$("#bt_display_cadastro").on('click', function(){
+		$(".box-form.login").hide();
+		$(".msg h3").hide();
+		$(".box-form.cadastro").fadeIn(400);
+	});
+}
+
+
+
+
+function initDraggable() {
+  $( "#draggable span" ).draggable({
+    containment: '#draggableContentArea',
+    cursor: 'move',
+    snap: '#draggableContentArea'
+  });
+}
+
+function hoverPlayers(){
+
+	$(".team-configs-area .table tr").mouseover(function() {
+		var getClass = $(this).attr('class');
+		$(".icon-user-plus #position_"+getClass).addClass('before-hover');
+
+	}).on('click',function(){
+		exibeModalSelecao();
+
+	}).mouseleave(function() {
+    	$(".icon-user-plus span").removeClass('before-hover');
+  });
+	
+}
+
+function exibeModalSelecao(){
+	$("#modalSelecao").modal('toggle');
+}
+
+
+function selectJogador(){
+	$(".select-jogador").click(function(){
+		var idJogador = $(this).attr('id');
+		var imgJogador = $(this).attr('title');
+
+		alert(idJogador + imgJogador);
+
+		$("#position_"+idJogador).append('<image src="images/'+imgJogador+'.jpg">');
+	});
+}
 
 
 //functions
@@ -41,7 +117,7 @@ function validaLogin(){
 	$.ajax({
 	  url: 'http://localhost:9000/dragoes/services/validaLogin.php',
 	  type: 'POST',
-	  dataType: 'json',
+	  //dataType: 'json',
 	  data: {login: login, senha: senha},
 	  
 	  complete: function(xhr, textStatus) {
@@ -66,11 +142,12 @@ function validaLogin(){
 
 	  },
 	  error: function(xhr, textStatus, errorThrown) {
+	  	alert("gole3");
 	  	console.log("0");
 	  	console.log(textStatus);
 	  	console.log(errorThrown);
 	    //called when there is an error
-	    alert("Login Inválido");
+	    //alert("Login Inválido");
 	  }
 	});
 }
@@ -281,22 +358,33 @@ function logOut(){
 
 
 function buscaJogadores(){
+
+	$(".row.boxes > .default").hide();
+	
+	$(".row-search-players").empty();
+	$(".row-search-players").hide();
+	$(".row-search-players").fadeIn(800);
+
+	$(".search-players").fadeIn(800);
+
+
 	console.log("entrou na function");
 	
 	var nome = $("#search_field").val();
 	//console.log(nome);
 
 	$.ajax({
-	  url: 'http://localhost:9000/dragoes/services/buscaJogadores.php',
-	  type: 'POST',
+	  url: 'http://localhost:9000/dragoes/services/buscaJogadores.php?nome='+nome+'',
+	  type: 'GET',
+	  //contentType: "application/x-www-form-urlencoded; charset=iso-8859-1",
 	  dataType: 'json',
-	  data: {nome: nome},
+	  //data: {nome: nome},
 	  complete: function(xhr, textStatus) {
 	    //alert("completo");
 	    //console.log(data);
 	  },
 	  success: function(data, textStatus, xhr) {
-	    alert("Sucesso");
+	   // alert("Sucesso");
 	    
 
 	    $.each(data, function(index, val) {
@@ -307,19 +395,24 @@ function buscaJogadores(){
 	    	console.log(data[index].image_path);
 
 
-	    	$(".row-search-players").append('<div class="col-6 col-sm-6 col-md-3 col-lg-2 col-xl-2  mt-4 mb-4 text-center pl-1 pr-1">'+
-							'<div class="box-player">'+
-								'<h3 class="title-players anton dark-grey">'+data[index].apelido+'</h3>'+
-								'<div class="img-box"><img onclick="javascript:exibeBoxAvaliacao('+data[index].id+')" class="zoom" style="cursor:pointer;max-height:140px; max-width: 190px;" src="images/'+data[index].image_path+'.jpg"></div>'+
+	    	$(".row-search-players").append('<div class="col-6 col-sm-6 col-md-3 col-lg-2 col-xl-2  mt-4 mb-4 text-center pl-1 pr-1 div-search">'+
+	    					'<div class="box-player">'+
+	    						'<h3 class="title-players anton dark-grey">'+data[index].apelido+'</h3>'+
+								'<div class="img-box">'+
+									'<img onclick="javascript:exibeBoxAvaliacao('+data[index].id+')" style="cursor:pointer;max-height:140px; max-width: 190px;" src="images/'+data[index].image_path+'.jpg">'+
+								'</div>'+
 								'<button id="bt_'+data[index].id+'" type="button" class="btn btn-green btn-block mt-2" onclick="javascript:exibeBoxAvaliacao('+data[index].id+')">'+
 									'Avalie'+
-								'</button>	'+
-							'</div>'+
-						'</div>')
+								'</button>'+
+								'</div>'+
+							'</div>')
 	    });
 	  },
 	  error: function(xhr, textStatus, errorThrown) {
-	    alert("Errou");
+	    alert("Erro na consulta");
+	    console.log("Erro: "+ xhr);
+	    console.log("Erro: "+ textStatus);
+	    console.log("Erro: "+ errorThrown);
 	  }
 	});
 	

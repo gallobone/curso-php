@@ -8,6 +8,7 @@ $results = $obj->exibeRanking($id_usuario);
 ?>	
 
 	<div class="container mt-5">
+		<h1 class="anton mutant-green mb-5 ocean-blue">Your Ranking</h1>
 		<section class="section-ranking">
 			<?php foreach($results as $row) :?>
 				<?php 

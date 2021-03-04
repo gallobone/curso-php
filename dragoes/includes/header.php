@@ -23,7 +23,7 @@ function logOut()
 	session_unset();
 	session_destroy();
 
-	header("location: login.php?login=no_session");
+	header("location: login.php?login=null");
 }
 
   if (isset($_GET['logout'])) {
@@ -45,6 +45,10 @@ function logOut()
 
 
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+	<link rel="stylesheet" type="text/css" href="css/space.css">
+	
+	<link rel="stylesheet" type="text/css" href="css/fonts.css">
 	<link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
 
 
@@ -55,9 +59,16 @@ function logOut()
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
 	<script type="text/javascript" src="js/scripts.js"></script>
+
+	<!--animate fonts-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 </head>
 
 <body class="body">
+	<div id='stars'></div>
+	<div id='stars2'></div>
+	<div id='stars3'></div>
+	
 	<div class="all">
 		<header>
 			<div class="container">
@@ -111,11 +122,11 @@ function logOut()
 									    </li>
 								  	</ul>
 
-								  	<form class="form-inline my-2 my-lg-0">
+								  	<div class="form-inline form-search my-2 my-lg-0">
 								      <input id="search_field" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
 								      <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>-->
-								    </form>
-								    <button class="btn btn-outline-success my-2 my-sm-0" onclick="javascript:buscaJogadores()">Buscar</button>
+								    </div>
+								    <button class="btn btn-outline-success btn-form-search my-2 my-sm-0" onclick="javascript:buscaJogadores()">Buscar</button>
 								  	
 								</div>
 							</nav>

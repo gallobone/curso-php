@@ -74,10 +74,10 @@ class Jogadores
 		$sql = new Sql();
 
 		$results = $sql->run_query("SELECT * FROM tb_jogadores WHERE nome LIKE CONCAT('%', :NOME,  '%' )", array(
-			":NOME"=>$name
+			":NOME"=>utf8_encode($name)
 		));
 
-		json_encode($results);
+		//json_encode($results);
 
 		return $results;
 		//print_r($results);

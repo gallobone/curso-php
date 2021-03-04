@@ -48,8 +48,10 @@
 .strong-yellow{color: #ffed00}
 .red-blood{color: #ff1313}
 .dark-red{color: #b73540;}
+.red-warning{color: #f44336;}
 .ghost-grey{color: #a7a7a7}
 .dark-grey{color: #58575a;}
+.ocean-blue{color: #54a3bb;}
 .terror-blue{color: #3e93ff}
 .dark-blue{color: #3c587b;}
 .primary-black{color: #191919;}
@@ -61,6 +63,8 @@
 .btn-green:hover{background-color:#70a263;}
 .btn-logout{border-radius: 3px 3px 3px 3px;background: #515d5f;padding: 0.20rem 1.1rem;border: 1px solid #bbb2b2;color: #fff;text-decoration: none;}
 .btn-logout:hover{color: #fff; text-decoration: underline;}
+.btn-orange{background-color:#e0803a;border: 1px solid #e0803a;}
+.btn-orange:hover{background-color:#e0803a;opacity: 0.7;}
 /*menu*/
 .nav-link.active{color:#54a3bb!important;}
 
@@ -81,19 +85,26 @@ html{/*font-size: 62.5%;*/}
 body{/*background:#242424; /*#0c2133*/}
 
 body.body-login{height: 100%;background: #222;}
-body.body{height: 100%;/*background: #222;*/background: #ffffff;background-image: url('../images/bg-3.jpg'); background-repeat: repeat; background-size: auto;}
+body.body{height: 100%;/*background: #222;*/background: #ffffff;background-image: url('../images/bg-3-b.png'); background-repeat: repeat; background-size: auto;}
 .container{max-width: 1180px;margin: 0 auto;}
+.container-login{max-width: 540px;}
+.container-login .box-form.cadastro{display: none;}
+.container-login .box-form .div-set-cadastro, .div-set-login{text-align: right;}
+.container-login .box-form  a{cursor: pointer; color: #fff;text-decoration: underline;}
+.container-login .box-form  a:hover{color: #fff; text-decoration: underline;}
+.msg h3{text-shadow: 1px 1px 4px #292929;font-size: 1.4rem;}
+
 
 /*.body h1{color: #51e2c2;font-family: 'Nosifer', cursive;}*/
 /*.body h2{text-shadow: 0px 20px 5px #101010;}*/
 
 
-header{background-color: #191919;border-bottom: 5px solid #fff;box-shadow: 1px 1px 8px #464646;}
+header{background-color: #191919;border-bottom: 1px solid #fff;box-shadow: 1px 1px 8px #464646;}
 header h1{text-align: left;}
 header .img-header-logo{max-width: 100px; height: auto;}
 .username-box{position: absolute; top: 2px; right: 0; font-size: 0.65rem;margin-right:15px;}
 
-.box-form{padding: 20px 20px;border: 1px solid #ccc; border-radius: 8px 8px;background-color: #ffffff;}
+.box-form{padding: 20px 20px;border: 1px solid #ccc; border-radius: 8px 8px;background-color: transparent;}
 /*.box-form h1{font-family: 'Luckiest Guy', cursive;}*/
 
 
@@ -105,20 +116,22 @@ header .img-header-logo{max-width: 100px; height: auto;}
 .section-players .boxes .box-player{
 	background: #fff;
     border: 1px solid #ad9b9b;
-    padding: 1.0rem 1.0rem;
+    /*padding: 1.0rem 1.0rem; OLD RULE BKP*/
+    padding: 0.5rem 0.5rem;
     border-radius: 5px 5px 5px 5px;
     box-shadow: 0px 10px 15px 5px #999;}
-.section-players .img-box{border-radius: 5px;background: #e2e2e2;padding: 20px 10px;border: 1px solid #636363;}
+.section-players .img-box{/*border-radius: 5px --old rule bkp*/;background: #e2e2e2;/*padding: 20px 10px --old rule bkp--*/;border: 1px solid #636363;text-align: center;}
+/*.section-players .img-box img{max-width: 164px!important; max-height: 225px!important;width: 164px!important; height: 225px!important;}*/
 /*.section-players .title-players{color: #ffffff;}*/
 
 
 .zoom {transition: transform 0.6s; /* Animation */}
 
 .zoom:hover {
-  transform: scale(2.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
   border: 1px solid #ccc;
   z-index:3;
-  position: relative;
+  position: relative; 
   box-shadow: 0px 10px 15px 5px #444;
 }
 
@@ -147,7 +160,6 @@ header .img-header-logo{max-width: 100px; height: auto;}
 
 
 
-
 .modal-footer-box-avaliacao{}
 .modal-footer-msg{display: none;justify-content: space-between;align-items: center;padding: 1rem 1.5rem;}
 .modal-footer-msg p{font-weight: bold; margin: 1rem 0;}
@@ -173,6 +185,35 @@ header .img-header-logo{max-width: 100px; height: auto;}
 .section-ranking .info-ranking:nth-child(3) h3{font-size:2.5rem;}
 
 .fader{display:none;position: fixed;height: 100%;width: 100%;top: 0;left: 0;background: #000;opacity: 0.7;z-index: 2;}
+
+
+.search-players{display: none;}
+
+
+/*modal theme dark rules*/
+.modal{background: #000000c9;}
+
+.modal-content{
+	/*background-color: #0d65730d;
+    border: 1px solid #00bcd459;
+    box-shadow: 0px 0px 10px 1px #18e6d352;*/
+
+    background-color: #54a3bb08;
+    border: 1px solid #54a3bb38;
+    box-shadow: 0px 0px 10px 1px #54a3bbc9;
+}
+
+.modal .div-lista-habilides-row{color: #00f36e;}
+/*end modal theme dark rules*/
+
+
+
+/*Formacao*/
+.formacao{display: block; position: absolute; width: 100%; top: 0;}
+.formacao span{cursor: move;}
+.team-configs-area .table tr:hover{cursor:pointer;}
+#modalSelecao .select-jogador{cursor: pointer;}
+.icon-user-plus span img{max-width: 30px;position: absolute;}
 
 
 /*media queries*/

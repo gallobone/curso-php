@@ -16,6 +16,10 @@ class Sql extends PDO
 		try {
 			//Criando o objeto de conexao com os banco de dados
 			$this->connectionString = new PDO("mysql:host=localhost;dbname=db_dragoes", "root", "root2019@Maldini33");
+			$this->connectionString->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, "SET NAMES 'utf8'");
+			$this->connectionString->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, "SET character_set_connection=utf8");
+			$this->connectionString->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, "SET character_set_client=utf8");
+			$this->connectionString->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, "SET character_set_results=utf8");
 
 			//echo "Conexão estabelecida<br/>";
 			

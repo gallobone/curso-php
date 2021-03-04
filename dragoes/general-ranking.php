@@ -7,8 +7,8 @@ $results = $obj->exibeGeneralRanking();
 
 ?>	
 
-	<div class="container mt-5">
-		<h2>General Ranking</h2>
+	<div class="container mt-5 mb-5">
+		<h1 class="anton mutant-green mb-5 ocean-blue">General Ranking</h1>
 		<section class="section-ranking">
 			<?php foreach($results as $row) :?>
 				<?php 
