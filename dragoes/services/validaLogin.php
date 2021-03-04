@@ -4,18 +4,18 @@
 require_once('../classes/Sql.php');
 require_once('../classes/Login.php');
 
-$login = $_POST['login'];
+$email = $_POST['email'];
 $senha = $_POST['senha'];
 
 //use classes\Login;
 
 $obj = new Login();
 
-$obj->setUsuario($login);
+$obj->setEmail($email);
 $obj->setSenha($senha);
 
 
-$isLogged = $obj->validaLogin($login, $senha);
+$isLogged = $obj->validaLogin($email, $senha);
 
 
 if($isLogged){
@@ -33,8 +33,8 @@ if($isLogged){
 }
 else {
 
-	unset($_SESSION["login"]);
-	unset($_SESSION["id_usuario"]);
+	//unset($_SESSION["login"]);
+	//unset($_SESSION["id_usuario"]);
 
 	header("location: ../login.php?login=false");
 }

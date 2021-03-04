@@ -46,7 +46,7 @@ include_once('includes/header.php');
 						      </div>
 						      <div class="modal-body">
 						        <div class="row">
-									<div class="col-8">
+									<div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 div-range-skills">
 										<h5 class="mb-4 font-weight-bold strong-orange">Avalie as skills de <?php echo utf8_encode($row['apelido']);?></h5>
 										<div class="div-lista-habilidades">
 											<?php foreach($listaHabilidades as $row) : ?>
@@ -70,7 +70,7 @@ include_once('includes/header.php');
 											<?php endforeach; ?>
 										</div>
 									</div>
-									<div class="col-4">
+									<div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 div-modal-img-jopgador">
 										<img class="zoom" style="border: 2px solid #fff; width: 100%;" src="images/<?php echo $imgJogador;?>.jpg">
 									</div>
 								</div>

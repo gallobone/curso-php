@@ -56,12 +56,12 @@ class Login
 	}
 	*/
 
-	public function validaLogin(string $usuario, string $senha):bool{
+	public function validaLogin(string $email, string $senha):bool{
 
 		$sql = new Sql();
 
-		$results = $sql->run_query("SELECT * FROM tb_usuarios WHERE login = :LOGIN AND senha = :SENHA", array(
-			":LOGIN"=> $usuario,
+		$results = $sql->run_query("SELECT * FROM tb_usuarios WHERE email = :EMAIL AND senha = :SENHA", array(
+			":EMAIL"=> $email,
 			":SENHA"=> $senha
 			));
 		
@@ -74,6 +74,7 @@ class Login
 			
 			$this->setUsuario($row['nome']);
 			$this->setIdusuario($row['id']);
+			$this->setEmail($row['email']);
 			
 			//$user = $this->getUsuario();
 			//$iduser = $this->getIdusuario();

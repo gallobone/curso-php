@@ -64,12 +64,12 @@ switch (session_status()) {
 
 						  <div class="form-group">
 						    <!--<label for="username">Username</label>-->
-						    <input type="text" class="form-control" id="username" placeholder="Username" name="login">
+						    <input type="email" class="form-control" id="email" placeholder="E-mail" name="email" required>
 						  </div>
 						  
 						  <div class="form-group">
 						    <!--<label for="password">Password</label>-->
-						    <input type="password" class="form-control" id="password" placeholder="Password" name="senha">
+						    <input type="password" class="form-control" id="password" placeholder="Password" name="senha" required>
 						  </div>
 
 						  <!--<input type="button" name="" value="Login" id="bt_login" class="btn btn-primary">-->
@@ -92,22 +92,22 @@ switch (session_status()) {
 
 							<div class="form-group">
 							    <!--<label for="username">Username</label>-->
-							    <input type="email" class="form-control" id="cadastro_email" placeholder="E-mail" name="cadastro-email">
+							    <input type="email" class="form-control" id="cadastro_email" placeholder="E-mail" name="cadastro-email" required>
 						  	</div>
 
 						  	<div class="form-group">
 							    <!--<label for="username">Username</label>-->
-							    <input type="text" class="form-control" id="cadastro_name" placeholder="Name" name="cadastro-name">
+							    <input type="text" class="form-control" id="cadastro_name" placeholder="Name" name="cadastro-name" required>
 						  	</div>
 
 							<div class="form-group">
 								<!--<label for="username">Username</label>-->
-								<input type="text" class="form-control" id="cadastro_username" placeholder="Username" name="cadastro-login">
+								<input type="text" class="form-control" id="cadastro_username" placeholder="Username" name="cadastro-login" required>
 							</div>
 							  
 						  	<div class="form-group">
 						    	<!--<label for="password">Password</label>-->
-						    	<input type="password" class="form-control" id="cadastro_password" placeholder="Password" name="cadastro-senha">
+						    	<input type="password" class="form-control" id="cadastro_password" placeholder="Password" name="cadastro-senha" required>
 						  	</div>
 
 							<!--<input type="button" name="" value="Login" id="bt_login" class="btn btn-primary">-->
